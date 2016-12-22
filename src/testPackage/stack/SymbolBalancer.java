@@ -1,4 +1,4 @@
-package testPackage;
+package testPackage.stack;
 
 public class SymbolBalancer {
 	char array[] = new char[6];

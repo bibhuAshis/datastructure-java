@@ -1,4 +1,4 @@
-package testPackage;
+package testPackage.stack;
 
 /**
  * Created by bajmd on 22/12/16.

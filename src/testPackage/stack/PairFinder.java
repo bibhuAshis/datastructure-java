@@ -1,4 +1,4 @@
-package testPackage;
+package testPackage.stack;
 import java.util.*;
 
 public class PairFinder {

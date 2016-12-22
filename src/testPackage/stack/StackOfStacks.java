@@ -1,4 +1,4 @@
-package testPackage;
+package testPackage.stack;
 
 //Class Stack
 class IStack {

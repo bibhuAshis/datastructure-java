@@ -1,4 +1,4 @@
-package testPackage;
+package testPackage.stack;
 
 public class Stack {
 	int array[] = new int[5];
