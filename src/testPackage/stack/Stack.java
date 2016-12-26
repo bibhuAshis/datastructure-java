@@ -1,5 +1,9 @@
 package testPackage.stack;
 
+/**
+ * Created by bajmd on 20/12/16.
+ */
+
 public class Stack {
 	int array[] = new int[5];
 	int top = -1;

@@ -1,10 +1,16 @@
 package testPackage.stack;
 
-public class SymbolBalancer {
+/**
+ * Created by bajmd on 24/12/16.
+ * Problem Statement: Discuss how stacks can be used for checking balancing of symbols?
+ */
+
+// Stack
+class SymbolBalancerStack {
 	char array[] = new char[6];
 	int top = -1;
 
-//Push
+	//Push
 	public void push(char data) {
 		top++;
 		if (top >= array.length) {
@@ -20,8 +26,8 @@ public class SymbolBalancer {
 		}
 		System.out.println();
 	}
-	
-// Pop	
+
+	// Pop
 	public char pop() {
 		if (top < 0) {
 			System.out.println("Stack is empty");
@@ -31,12 +37,14 @@ public class SymbolBalancer {
 			System.out.println("Popped element is " + array[top]);
 			return array[top--];
 		}
-	}	
+	}
+}
 
-	public static void main (String args[]) {
-		SymbolBalancer symbols = new SymbolBalancer();
-		String symbolArray = "((A+B)+[C-D])";
-		boolean isBalanced = true;
+// Balancing Logic
+class Balancer {
+	SymbolBalancerStack symbols = new SymbolBalancerStack();
+	boolean isBalanced = true;
+	void checkBalance (String symbolArray) {
 		for (int i=0; i<symbolArray.length(); i++) {
 			if (symbolArray.charAt(i) == '[' || symbolArray.charAt(i) == '{' || symbolArray.charAt(i) == '(') {
 				symbols.push(symbolArray.charAt(i));
@@ -56,7 +64,7 @@ public class SymbolBalancer {
 				}
 				else if (symbolArray.charAt(i) != '[' || symbolArray.charAt(i) != '{' || symbolArray.charAt(i) != '(' || symbolArray.charAt(i) != ']' || symbolArray.charAt(i) != '}' || symbolArray.charAt(i) != ')')
 					continue;
-				else 
+				else
 					continue;
 			}
 		}
@@ -64,5 +72,13 @@ public class SymbolBalancer {
 			System.out.println("String is Balanced");
 		else
 			System.out.println("String is Unbalanced");
+	}
+}
+
+public class SymbolBalancer {
+	public static void main (String args[]) {
+		Balancer balance = new Balancer();
+		String symbolArray = "((A+B)+[C-D])";
+		balance.checkBalance(symbolArray);
 	}
 }

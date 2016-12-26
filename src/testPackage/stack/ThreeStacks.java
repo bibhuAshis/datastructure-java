@@ -1,5 +1,9 @@
 package testPackage.stack;
 
+/**
+ * Created by bajmd on 21/12/16.
+ */
+
 public class ThreeStacks {
 	
 	int array[] = new int [5];

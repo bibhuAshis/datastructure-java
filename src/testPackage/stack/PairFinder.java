@@ -1,6 +1,10 @@
 package testPackage.stack;
 import java.util.*;
 
+/**
+ * Created by bajmd on 26/12/16.
+ */
+
 public class PairFinder {
 	
 	public static void main (String args[]) {

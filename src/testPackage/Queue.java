@@ -1,5 +1,9 @@
 package testPackage;
 
+/**
+ * Created by bajmd on 28/12/16.
+ */
+
 public class Queue {
 	int array[] = new int[5];
 	int front = -1;

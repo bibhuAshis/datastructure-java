@@ -2,6 +2,7 @@ package testPackage.stack;
 
 /**
  * Created by bajmd on 22/12/16.
+ * Problem Statement: Discuss infix to postfix conversion algorithm using stack.
  */
 
 // Stack class

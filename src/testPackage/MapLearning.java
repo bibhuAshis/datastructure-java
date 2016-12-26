@@ -3,6 +3,10 @@ package testPackage;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Created by bajmd on 16/12/16.
+ */
+
 public class MapLearning {
 
 	public static void main(String[] args) {

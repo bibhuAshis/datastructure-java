@@ -1,5 +1,12 @@
 package testPackage.stack;
 
+/**
+ * Created by bajmd on 20/12/16.
+ * Problem Statement: A single stack is implemented using 3 stacks of size 2. When we push to outer stack,
+ * internally it pushes to first stack. if it is full, it pushes to next stack and so on. During pop from
+ * outer stack, it pops from the third stack. If it is empty it pops from second stack and so on. Implement.
+ */
+
 //Class Stack
 class IStack {
 	 int array[] = new int[2];
@@ -67,17 +74,17 @@ public class StackOfStacks {
 	static int stackTop = 0;
 		
 	
-	// Stack Push
+	// Stack of stacks Push
 	 public void stackPush(int stackData) {
 		 stackArray[stackTop].push(stackData);
 	 }
 	 
-	 // Stack Pop
+	 // Stack of stacks Pop
 	 public void stackPop() {
 		 stackArray[stackTop].pop();
 	 }
 	 
-	 // Stack Peep
+	 // Stack of stacks Peep
 	 public void stackPeep() {
 		 stackArray[stackTop].peep();
 	 }	
