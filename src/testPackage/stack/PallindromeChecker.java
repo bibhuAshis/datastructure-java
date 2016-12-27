@@ -8,13 +8,13 @@ package testPackage.stack;
 // Palindrome Stack Class
 class PalindromeStack {
     char array[] = new char[10];
-    int top =- 1;
+    int top = - 1;
 
     // Push
     public void push(char inputChar) {
         top++;
         if (top >= array.length) {
-            System.out.println("Stack is full ");
+            //System.out.println("Stack is full ");
             top--;
         }
         else {
@@ -26,7 +26,7 @@ class PalindromeStack {
     // Pop
     public char pop() {
         if (top < 0) {
-            System.out.println("Stack is empty");
+            //System.out.println("Stack is empty");
             return ' ';
         }
         else {

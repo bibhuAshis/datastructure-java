@@ -66,7 +66,7 @@ class Evaluator {
                 stack.push(result);
             }
             else if (PostfixInput.charAt(i) == '/') {
-                result = stack.pop() / stack.pop();
+                result = 1/(stack.pop() / stack.pop());
                 stack.push(result);
             }
             else {
