@@ -7,7 +7,7 @@ package testPackage.stack;
 
 // Reverse Stack Class
 class ReverseStack {
-    int array[] = new int[10];
+    int array[] = new int[5];
     int top =-1;
 
     // Push
@@ -33,31 +33,38 @@ class ReverseStack {
         }
     }
 
-    // Peep
-    int peep() {
-        if (top < 0) {
-            return 0;
+    // Print Stack
+    void print() {
+        for (int i=0; i<array.length; i++) {
+            System.out.print(" " + array[i]);
         }
-        else {
-            System.out.println("Top of stack is " + array[top]);
-            return array[top];
-        }
+        System.out.println(" ");
     }
 }
 
 // Reversing Logic
 class StackReverser {
     ReverseStack stack = new ReverseStack();
-    int reverse(int inputStack[]) {
-        for (int i=0; i<inputStack.length; i++) {
-            stack.push(inputStack[i]);
+    ReverseStack reversedStack = new ReverseStack();
+    int reverse(int input[]) {
+        for (int i=0; i<input.length; i++) {
+            stack.push(input[i]);
         }
+        System.out.println("The stack is ");
+        stack.print();
+        while (stack.top != -1 ) {
+            reversedStack.push(stack.pop());
+        }
+        System.out.println("The reversed stack is ");
+        reversedStack.print();
         return 0;
     }
 }
 
 public class Reverse {
     public static void main (String args []) {
-
+        StackReverser reverser = new StackReverser();
+        int input[] = {1,2,3,4,5};
+        reverser.reverse(input);
     }
 }
