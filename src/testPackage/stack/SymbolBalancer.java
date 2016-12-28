@@ -44,7 +44,7 @@ class SymbolBalancerStack {
 class Balancer {
 	SymbolBalancerStack symbols = new SymbolBalancerStack();
 	boolean isBalanced = true;
-	void checkBalance (String symbolArray) {
+	public void checkBalance (String symbolArray) {
 		for (int i=0; i<symbolArray.length(); i++) {
 			if (symbolArray.charAt(i) == '[' || symbolArray.charAt(i) == '{' || symbolArray.charAt(i) == '(') {
 				symbols.push(symbolArray.charAt(i));

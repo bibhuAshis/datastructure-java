@@ -5,24 +5,12 @@ package testPackage.stack;
  * Problem Statement: Discuss infix evaluation using one pass.
  */
 
-// Infix Evaluator Stack
-class InfixEvaluatorStack {
-    int array[] = new int[10];
+// Operand Stack
+class OperandStack {
+    int array[] = new int[5];
     int top = -1;
 
     // Push
-    public void push(char data) {
-        top++;
-        if (top >= array.length) {
-            //System.out.println("Stack is full");
-            top--;
-        }
-        else {
-            array[top] = data;
-            System.out.println("Pushed element is " + data);
-        }
-    }
-
     public void push(int data) {
         top++;
         if (top >= array.length) {
@@ -31,7 +19,7 @@ class InfixEvaluatorStack {
         }
         else {
             array[top] = data;
-            System.out.println("Pushed element is " + data);
+            System.out.println("Pushed element to operand stack is " + array[top]);
         }
     }
 
@@ -42,7 +30,7 @@ class InfixEvaluatorStack {
             return ' ';
         }
         else {
-            System.out.println("Popped element is " + array[top]);
+            System.out.println("Popped element from operand stack is " + array[top]);
             return (array[top--]);
         }
     }
@@ -58,10 +46,52 @@ class InfixEvaluatorStack {
     }
 }
 
+// Operator Stack
+class OperatorStack {
+    char array[] = new char[5];
+    int top = -1;
+
+    // Push
+    public void push(char data) {
+        top++;
+        if (top >= array.length) {
+            //System.out.println("Stack is full");
+            top--;
+        }
+        else {
+            array[top] = data;
+            System.out.println("Pushed element to operator stack is " + array[top]);
+        }
+    }
+
+    // Pop
+    public char pop() {
+        if (top < 0) {
+            //System.out.println("Stack is empty");
+            return ' ';
+        }
+        else {
+            System.out.println("Popped element from operator stack is " + array[top]);
+            return (array[top--]);
+        }
+    }
+
+    // Peep
+    public char peep() {
+        if (top < 0) {
+            return ' ';
+        }
+        else {
+            return array[top];
+        }
+    }
+}
+
 // Infix Evaluation Logic
 class Eval {
-    InfixEvaluatorStack operatorStack = new InfixEvaluatorStack();
-    InfixEvaluatorStack operandStack = new InfixEvaluatorStack();
+    OperandStack operandStack = new OperandStack();
+    OperatorStack operatorStack = new OperatorStack();
+
     public int calculate (char symbol, int operand1, int operand2) {
         int result = 0;
         switch (symbol) {
@@ -81,34 +111,43 @@ class Eval {
                 result = 1/(operand1 / operand2);
                 break;
             }
+            default: {
+                break;
+            }
         }
         return result;
     }
     public int evalInfix(String inputString) {
-        for (int i=0; i< inputString.length(); i++) {
+        for (int i=0; i<inputString.length(); i++) {
             if ((inputString.charAt(i) == '+' || inputString.charAt(i) == '-' || inputString.charAt(i) == '*' || inputString.charAt(i) == '/') && (operatorStack.top == -1)) {
                 operatorStack.push(inputString.charAt(i));
             }
             else if (inputString.charAt(i) == '+' || inputString.charAt(i) == '-') {
-                while (operatorStack.peep() == '+' || operatorStack.peep() == '-' || operatorStack.peep() == '*' || operatorStack.peep() == '/') {
-                    //calculate(operatorStack.peep(), operandStack.pop(), operandStack.pop());
-                    operatorStack.pop();
+                while (!(operatorStack.top == -1)) {
+                    operandStack.push(calculate(operatorStack.pop(), operandStack.pop(), operandStack.pop()));
                 }
+                operatorStack.push(inputString.charAt(i));
             }
-            /*else if () {
-
-            }*/
+            else if (inputString.charAt(i) == '*' || inputString.charAt(i) == '/') {
+                while (!(operatorStack.peep() == '+' || operatorStack.peep() == '-' || operatorStack.top == -1)) {
+                    operandStack.push(calculate(operatorStack.pop(), operandStack.pop(), operandStack.pop()));
+                }
+                operatorStack.push(inputString.charAt(i));
+            }
             else {
-                operandStack.push(inputString.charAt(i));
+                operandStack.push(Character.getNumericValue(inputString.charAt(i)));
             }
         }
-        return 0;
+        while (operatorStack.top != -1) {
+            operandStack.push(calculate(operatorStack.pop(), operandStack.pop(), operandStack.pop()));
+        }
+        return operandStack.pop();
     }
 }
 
 public class InfixEvaluator {
     public static void main (String args []) {
         Eval infixEval = new Eval();
-        infixEval.evalInfix("1+2*3-5");
+        System.out.println(infixEval.evalInfix("1+2*3-5+1"));
     }
 }
