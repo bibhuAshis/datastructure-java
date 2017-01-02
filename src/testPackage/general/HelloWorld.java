@@ -1,4 +1,4 @@
-package testPackage;
+package testPackage.general;
 
 /**
  * Created by bajmd on 15/12/16.

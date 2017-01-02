@@ -1,4 +1,4 @@
-package testPackage;
+package testPackage.queue;
 
 /**
  * Created by bajmd on 28/12/16.
@@ -18,12 +18,12 @@ public class Queue {
 			front++;
 			rear++;
 			array[rear] = data;
-			System.out.println(String.valueOf(array[rear]));
+			System.out.println("Enqueued element is " +String.valueOf(array[rear]));
 		}
 		else {
 			rear++;
 			array[rear] = data;
-			System.out.println(String.valueOf(array[rear]));
+			System.out.println("Enqueued element is " +String.valueOf(array[rear]));
 		}
 	}
 	
@@ -35,7 +35,7 @@ public class Queue {
 		}
 		else {
 			int data = array[front];
-			System.out.println(String.valueOf(data));
+			System.out.println("Dequeued element is " +String.valueOf(data));
 			front++;
 			return data;
 		}
