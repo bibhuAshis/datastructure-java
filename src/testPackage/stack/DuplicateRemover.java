@@ -1,50 +1,12 @@
+package testPackage.stack;
+
 /**
- * Created by mallikad on 1/1/17.
+ * Created by bajmd on 1/1/17.
  */
-// Stack Class
-class DupRemStack{
-    int Array[] = new int[15];
-    int top = -1;
-
-    // Push
-    public void push(int data) {
-        top++;
-        if(top >= Array.length)
-            top--;
-        else{
-            System.out.println("Pushed element is " +data );
-            Array[top] = data;
-        }
-    }
-
-    // Pop
-    public void pop() {
-        if (top >= 0) {
-            System.out.println("Popped element is " + Array[top]);
-            Array[top--] = 0;
-        }
-    }
-
-    // Peep
-    public int peep() {
-        if(top < 0)
-            return 0;
-        else
-            return (Array[top]);
-    }
-
-    // Print
-    public void print() {
-        for (int i=0; i<Array.length; i++) {
-            System.out.print(" " +Array[i]);
-        }
-        System.out.println(" ");
-    }
-}
 
 // Duplicate Removing Class
 class RemoveDuplicate {
-    DupRemStack stack = new DupRemStack();
+    Stack stack = new Stack();
     public  void remDup(int inputStack[]) {
         int i=0;
         while (i < inputStack.length) {

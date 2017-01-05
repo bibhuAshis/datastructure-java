@@ -5,56 +5,9 @@ package testPackage.stack;
  * Problem Statement: Discuss infix to postfix conversion algorithm using stack.
  */
 
-// Stack class
-class ConverterStack {
-    char inputArray[] = new char[20];
-    int top = -1;
-
-    //Push
-    public void push(char data) {
-        top++;
-        if (top >= inputArray.length) {
-            //System.out.println("Stack is full");
-            top--;
-        }
-        else {
-            inputArray[top] = data;
-            System.out.println("Pushed element is " + inputArray[top]);
-        }
-        for (int i=0; i<inputArray.length; i++) {
-            System.out.print(" " + inputArray[i]);
-        }
-        System.out.println();
-    }
-
-    // Pop
-    public char pop() {
-        if (top < 0) {
-            //System.out.println("Stack is empty");
-            return ' ';
-        }
-        else {
-            System.out.println("Popped element is " + inputArray[top]);
-            return inputArray[top--];
-        }
-    }
-
-    // Peep
-    public char peep() {
-        if (top < 0) {
-            //System.out.println("Stack is empty");
-            return ' ';
-        }
-        else {
-            System.out.println("Top of the stack is " + inputArray[top]);
-            return inputArray[top];
-        }
-    }
-}
-
 // Infix to Postfix class
 class InfixToPostfix {
-    ConverterStack postfixConverter = new ConverterStack();
+    CharStack postfixConverter = new CharStack();
     String postfixOutput = " ";
     String convertToPostfix(String infixInput) {
         for (int i=0; i<infixInput.length(); i++) {

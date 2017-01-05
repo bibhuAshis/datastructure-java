@@ -19,36 +19,38 @@ public class Stack {
 			array[top] = data;
 			System.out.println("Pushed element is " + array[top]);
 		}
-		for (int i=0; i<array.length; i++) {
-			System.out.print(" " + array[i]);
-		}
-		System.out.println();
 	}
 	
 	// Pop	
-	public void pop() {
+	public int pop() {
 		if (top < 0) {
-			System.out.println("Stack is empty");
+			return 0;
 		}
 		else {
 			System.out.println("Popped element is " + array[top]);
-			array[top] = 0;
-			top--;
+			int temp = array[top];
+			array[top--] = 0;
+			return (temp);
 		}
+	}
+	
+	// Peep
+	public int peep() {
+		if (top < 0) {
+			return 0;
+		}
+		else {
+			return (array[top]);
+		}
+	}
+
+	// Print
+	public void print() {
+		System.out.println("The stack is:");
 		for (int i=0; i<array.length; i++) {
 			System.out.print(" " + array[i]);
 		}
 		System.out.println();
-	}
-	
-	// Peep
-	public void peep() {
-		if (top < 0) {
-			System.out.println("Stack is empty");
-		}
-		else {
-			System.out.println("Top of stack " + array[top]);
-		}
 	}
 	public static void main (String args[]) {
 		Stack stack = new Stack();
@@ -63,6 +65,7 @@ public class Stack {
 		stack.peep();
 		stack.push(5);
 		stack.peep();
+		stack.print();
 		stack.push(6); // Pushing to Full Stack
 		stack.pop();
 		stack.peep();
@@ -73,7 +76,8 @@ public class Stack {
 		stack.pop();
 		stack.peep();
 		stack.pop();
-		stack.peep(); 
+		stack.peep();
+		stack.print();
 		stack.pop(); // Popping from Empty Stack
 	}
 }

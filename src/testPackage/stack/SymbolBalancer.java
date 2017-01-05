@@ -5,44 +5,9 @@ package testPackage.stack;
  * Problem Statement: Discuss how stacks can be used for checking balancing of symbols?
  */
 
-// Stack
-class SymbolBalancerStack {
-	char array[] = new char[6];
-	int top = -1;
-
-	//Push
-	public void push(char data) {
-		top++;
-		if (top >= array.length) {
-			System.out.println("Stack is full");
-			top--;
-		}
-		else {
-			array[top] = data;
-			System.out.println("Pushed element is " + array[top]);
-		}
-		for (int i=0; i<array.length; i++) {
-			System.out.print(" " + array[i]);
-		}
-		System.out.println();
-	}
-
-	// Pop
-	public char pop() {
-		if (top < 0) {
-			System.out.println("Stack is empty");
-			return ' ';
-		}
-		else {
-			System.out.println("Popped element is " + array[top]);
-			return array[top--];
-		}
-	}
-}
-
 // Balancing Logic
 class Balancer {
-	SymbolBalancerStack symbols = new SymbolBalancerStack();
+	CharStack symbols = new CharStack();
 	boolean isBalanced = true;
 	public void checkBalance (String symbolArray) {
 		for (int i=0; i<symbolArray.length(); i++) {
@@ -62,10 +27,6 @@ class Balancer {
 					isBalanced = false;
 					break;
 				}
-				else if (symbolArray.charAt(i) != '[' || symbolArray.charAt(i) != '{' || symbolArray.charAt(i) != '(' || symbolArray.charAt(i) != ']' || symbolArray.charAt(i) != '}' || symbolArray.charAt(i) != ')')
-					continue;
-				else
-					continue;
 			}
 		}
 		if (isBalanced)
@@ -78,7 +39,7 @@ class Balancer {
 public class SymbolBalancer {
 	public static void main (String args[]) {
 		Balancer balance = new Balancer();
-		String symbolArray = "((A+B)+[C-D])";
+		String symbolArray = "((A+B)+{}[C-D])";
 		balance.checkBalance(symbolArray);
 	}
 }

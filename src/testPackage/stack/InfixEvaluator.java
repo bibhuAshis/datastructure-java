@@ -5,92 +5,10 @@ package testPackage.stack;
  * Problem Statement: Discuss infix evaluation using one pass.
  */
 
-// Operand Stack
-class OperandStack {
-    int array[] = new int[5];
-    int top = -1;
-
-    // Push
-    public void push(int data) {
-        top++;
-        if (top >= array.length) {
-            //System.out.println("Stack is full");
-            top--;
-        }
-        else {
-            array[top] = data;
-            System.out.println("Pushed element to operand stack is " + array[top]);
-        }
-    }
-
-    // Pop
-    public int pop() {
-        if (top < 0) {
-            //System.out.println("Stack is empty");
-            return ' ';
-        }
-        else {
-            System.out.println("Popped element from operand stack is " + array[top]);
-            return (array[top--]);
-        }
-    }
-
-    // Peep
-    public int peep() {
-        if (top < 0) {
-            return ' ';
-        }
-        else {
-            return array[top];
-        }
-    }
-}
-
-// Operator Stack
-class OperatorStack {
-    char array[] = new char[5];
-    int top = -1;
-
-    // Push
-    public void push(char data) {
-        top++;
-        if (top >= array.length) {
-            //System.out.println("Stack is full");
-            top--;
-        }
-        else {
-            array[top] = data;
-            System.out.println("Pushed element to operator stack is " + array[top]);
-        }
-    }
-
-    // Pop
-    public char pop() {
-        if (top < 0) {
-            //System.out.println("Stack is empty");
-            return ' ';
-        }
-        else {
-            System.out.println("Popped element from operator stack is " + array[top]);
-            return (array[top--]);
-        }
-    }
-
-    // Peep
-    public char peep() {
-        if (top < 0) {
-            return ' ';
-        }
-        else {
-            return array[top];
-        }
-    }
-}
-
 // Infix Evaluation Logic
 class Eval {
-    OperandStack operandStack = new OperandStack();
-    OperatorStack operatorStack = new OperatorStack();
+    Stack operandStack = new Stack();
+    CharStack operatorStack = new CharStack();
 
     public int calculate (char symbol, int operand1, int operand2) {
         int result = 0;
@@ -148,6 +66,6 @@ class Eval {
 public class InfixEvaluator {
     public static void main (String args []) {
         Eval infixEval = new Eval();
-        System.out.println(infixEval.evalInfix("1+2*3-5+1"));
+        System.out.println("The result of infix evaluation is " + infixEval.evalInfix("1+2*3-5+1"));
     }
 }
