@@ -2,11 +2,12 @@ package testPackage.stack;
 
 /**
  * Created by bajmd on 20/12/16.
+ * Problem Statement: Write array implementation of integer stack ADT.
  */
 
 public class Stack {
 	int array[] = new int[5];
-	int top = -1;
+	public int top = -1;
 	
 	// Push
 	public void push(int data) {
@@ -17,7 +18,7 @@ public class Stack {
 		}
 		else {
 			array[top] = data;
-			System.out.println("Pushed element is " + array[top]);
+			System.out.println("Pushed element to stack is " + array[top]);
 		}
 	}
 	
@@ -27,7 +28,7 @@ public class Stack {
 			return 0;
 		}
 		else {
-			System.out.println("Popped element is " + array[top]);
+			System.out.println("Popped element from stack is " + array[top]);
 			int temp = array[top];
 			array[top--] = 0;
 			return (temp);

@@ -2,6 +2,7 @@ package testPackage.stack;
 
 /**
  * Created by bajmd on 20/12/16.
+ * Problem Statement: Write array implementation of character stack ADT.
  */
 
 public class CharStack {

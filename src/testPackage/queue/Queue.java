@@ -2,6 +2,7 @@ package testPackage.queue;
 
 /**
  * Created by bajmd on 28/12/16.
+ * Problem Statement: Write array implementation of queue ADT.
  */
 
 public class Queue {
@@ -18,28 +19,44 @@ public class Queue {
 			front++;
 			rear++;
 			array[rear] = data;
-			System.out.println("Enqueued element is " +String.valueOf(array[rear]));
+			System.out.println("Enqueued element to queue is " +array[rear]);
 		}
 		else {
 			rear++;
 			array[rear] = data;
-			System.out.println("Enqueued element is " +String.valueOf(array[rear]));
+			System.out.println("Enqueued element to queue is " +array[rear]);
 		}
 	}
 	
 	// Dequeue
 	public int dequeue() {
-		if (front == -1 || front == array.length) {
+		if (front == -1 && rear == -1) {
 			System.out.println("Queue is Empty");
 			return -1;
 		}
+		else if (front > rear) {
+			System.out.println("Queue is Empty");
+			front = -1;
+			rear = -1;
+			return -1;
+		}
 		else {
-			int data = array[front];
-			System.out.println("Dequeued element is " +String.valueOf(data));
-			front++;
-			return data;
+			System.out.println("Dequeued element from queue is " +array[front]);
+			int temp = array[front];
+			array[front++] = 0;
+			return temp;
 		}
 	}
+
+	// Print
+	public void print() {
+		System.out.println("The queue is:");
+		for (int i=0; i<array.length; i++) {
+			System.out.print(" " + array[i]);
+		}
+		System.out.println();
+	}
+
 	public static void main(String args []) {
 		Queue queue = new Queue();
 		queue.enqueue(1);
@@ -47,13 +64,17 @@ public class Queue {
 		queue.enqueue(3);
 		queue.enqueue(4);
 		queue.enqueue(5);
+		queue.print();
 		queue.enqueue(6);
 		queue.dequeue();
 		queue.dequeue();
 		queue.dequeue();
 		queue.dequeue();
 		queue.dequeue();
+		queue.print();
 		queue.dequeue();
+		queue.enqueue(1);
+		queue.print();
 	}
 
 }

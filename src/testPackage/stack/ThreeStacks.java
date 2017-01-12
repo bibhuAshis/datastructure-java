@@ -2,6 +2,7 @@ package testPackage.stack;
 
 /**
  * Created by bajmd on 21/12/16.
+ * Problem Statement: How to implement 3 stacks in one array.
  */
 
 public class ThreeStacks {

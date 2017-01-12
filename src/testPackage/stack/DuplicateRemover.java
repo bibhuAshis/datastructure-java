@@ -2,6 +2,7 @@ package testPackage.stack;
 
 /**
  * Created by bajmd on 1/1/17.
+ * Problem Statement: Recursively remove all adjacent duplicates.
  */
 
 // Duplicate Removing Class

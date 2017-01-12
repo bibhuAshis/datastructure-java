@@ -2,6 +2,7 @@ package testPackage.stack;
 
 /**
  * Created by bajmd on 12/31/16.
+ * Problem Statement: Give an algorithm for sorting a stack in ascending order.
  */
 
 // Sorting Class
