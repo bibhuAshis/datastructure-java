@@ -6,7 +6,7 @@ package testPackage.stack;
  */
 
 public class Stack {
-	int array[] = new int[5];
+	public int array[] = new int[5];
 	public int top = -1;
 	
 	// Push
