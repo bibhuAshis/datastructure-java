@@ -67,6 +67,7 @@ public class Queue {
 		queue.print();
 		queue.enqueue(6);
 		queue.dequeue();
+		queue.print();
 		queue.dequeue();
 		queue.dequeue();
 		queue.dequeue();

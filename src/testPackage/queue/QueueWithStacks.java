@@ -51,7 +51,7 @@ class TwoStacks {
             }
             System.out.println();
         }
-        else if (stack1.top == -1 && stack2.top != -1){
+        else {
             System.out.println("The queue is:");
             for (int i = stack2.array.length-1; i >= 0 ; i--) {
                 System.out.print(" " + stack2.array[i]);
@@ -74,6 +74,7 @@ public class QueueWithStacks {
         queue.dequeue();
         queue.dequeue();
         queue.dequeue();
+        queue.print();
         queue.dequeue();
         queue.print();
         queue.dequeue();
