@@ -14,7 +14,7 @@ class TwoQueues {
             System.out.println("Pushed element to stack is " + data);
             queue1.enqueue(data);
         }
-        else if (queue2.rear != -1) {
+        else {
             queue2.enqueue(data);
             System.out.println("Pushed element to stack is " +data);
         }
@@ -44,8 +44,6 @@ class TwoQueues {
         }
         return -1;
     }
-
-    // Peep
 
     // Print
     public void print () {
