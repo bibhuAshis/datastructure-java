@@ -1,10 +1,10 @@
 package testPackage.queue;
-
-
 import testPackage.stack.Stack;
 
 /**
  * Created by bajmd on 1/16/2017.
+ * Problem Statement: Given a queue containing n elements, transfer these items on to a stack so that front element of
+ *  queue appears at the top of the stack and the order of all other items is preserved.
  */
 class QueuetoStack {
     Stack stack = new Stack();

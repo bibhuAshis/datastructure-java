@@ -4,6 +4,8 @@ import testPackage.stack.Stack;
 
 /**
  * Created by bjena on 1/17/2017.
+ * Problem Statement: Given a stack of integers, how to check whether each successive pair of numbers in the stack is
+ * consecutive or not. If the stack has odd number of elements, the element at the top is left out of a pair.
  */
 class ConsecutiveChecker {
     Queue queue = new Queue();
