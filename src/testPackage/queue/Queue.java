@@ -6,9 +6,9 @@ package testPackage.queue;
  */
 
 public class Queue {
-	int array[] = new int[5];
-	int front = -1;
-	int rear = -1;
+	public int array[] = new int[5];
+	public int front = -1;
+	public int rear = -1;
 	
 	// Enqueue
 	public void enqueue(int data) {

@@ -43,8 +43,7 @@ public class ConsecutiveIntegers {
         stack.push(4);
         stack.push(5);
         stack.push(-2);
-        stack.push(-3);
-        stack.push(11);
+        stack.push(-4);
         stack.print();
         ConsecutiveChecker checker = new ConsecutiveChecker();
         checker.checkConsecutiveness(stack);

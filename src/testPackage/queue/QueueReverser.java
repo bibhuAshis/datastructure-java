@@ -8,7 +8,7 @@ import testPackage.stack.Stack;
 class ReversingQueue {
     Stack stack = new Stack();
     public void reverse(Queue inputQueue) {
-        while (inputQueue.front != -1) {
+        while (inputQueue.front != inputQueue.rear) {
             stack.push(inputQueue.dequeue());
         }
         while (stack.top != -1) {
