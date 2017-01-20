@@ -7,17 +7,16 @@ package testPackage.queue;
  */
 class Rearrange {
     Queue tempQueue = new Queue();
-    Queue rearrangedQueue = new Queue();
     public void rearrangeQueue(Queue queue) {
         int m = queue.rear + 1;
         for (int i=0; i<m / 2; i++) {
             tempQueue.enqueue(queue.dequeue());
         }
         while (queue.front < m && tempQueue.front < m/2) {
-            rearrangedQueue.enqueue(tempQueue.dequeue());
-            rearrangedQueue.enqueue(queue.dequeue());
+            queue.enqueue(tempQueue.dequeue());
+            queue.enqueue(queue.dequeue());
         }
-        rearrangedQueue.print();
+        queue.print();
     }
 }
 public class QueueRearrange {

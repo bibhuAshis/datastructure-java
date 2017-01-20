@@ -9,18 +9,17 @@ import testPackage.stack.Stack;
  */
 class Shuffle {
     Stack stack = new Stack();
-    Queue shuffledQueue = new Queue();
     public void shuffleQueue(Queue queue, int k) {
         for (int i=0; i<k; i++) {
             stack.push(queue.dequeue());
         }
         while (stack.top != -1) {
-            shuffledQueue.enqueue(stack.pop());
+            queue.enqueue(stack.pop());
         }
-        while (queue.front != -1) {
-            shuffledQueue.enqueue(queue.dequeue());
+        while (queue.front != 0) {
+            queue.enqueue(queue.dequeue());
         }
-        shuffledQueue.print();
+        queue.print();
     }
 }
 public class QueueShuffle {

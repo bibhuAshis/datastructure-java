@@ -12,19 +12,29 @@ public class Queue {
 	
 	// Enqueue
 	public void enqueue(int data) {
-		if (rear == array.length-1) {
-			System.out.println("Queue is full");
-		}
-		else if (front == -1 && rear == -1) {
+		if (front == -1 && rear == -1) {
 			front++;
 			rear++;
 			array[rear] = data;
 			System.out.println("Enqueued element to queue is " +array[rear]);
 		}
-		else {
+		else if (front >= 0 && rear < array.length-1) {
 			rear++;
 			array[rear] = data;
 			System.out.println("Enqueued element to queue is " +array[rear]);
+		}
+		else if (front > 0 && rear == array.length-1) {
+			rear = 0;
+			array[rear] = data;
+			System.out.println("Enqueued element to queue is " +array[rear]);
+		}
+		else if (rear < front) {
+			rear++;
+			array[rear] = data;
+			System.out.println("Enqueued element to queue is " +array[rear]);
+		}
+		else if ((front == 0 && rear == array.length-1) || (rear+1 == front)) {
+			System.out.println("Queue is full");
 		}
 	}
 	
@@ -34,11 +44,16 @@ public class Queue {
 			System.out.println("Queue is Empty");
 			return -1;
 		}
-		else if (front > rear) {
+		else if (array[front] == 0) {
 			System.out.println("Queue is Empty");
-			front = -1;
-			rear = -1;
 			return -1;
+		}
+		else if (front == array.length-1 && rear < array.length-1) {
+			System.out.println("Dequeued element from queue is " +array[front]);
+			int temp = array[front];
+			array[front] = 0;
+			front = 0;
+			return temp;
 		}
 		else {
 			System.out.println("Dequeued element from queue is " +array[front]);
@@ -51,8 +66,15 @@ public class Queue {
 	// Print
 	public void print() {
 		System.out.println("The queue is:");
-		for (int i=0; i<array.length; i++) {
+		int i = front;
+		int j = 0;
+		while (i <= array.length-1) {
 			System.out.print(" " + array[i]);
+			i++;
+		}
+		while (j < front) {
+			System.out.print(" " + array[j]);
+			j++;
 		}
 		System.out.println();
 	}
@@ -67,15 +89,23 @@ public class Queue {
 		queue.print();
 		queue.enqueue(6);
 		queue.dequeue();
+		queue.enqueue(6);
 		queue.print();
 		queue.dequeue();
-		queue.dequeue();
-		queue.dequeue();
+		queue.print();
 		queue.dequeue();
 		queue.print();
 		queue.dequeue();
-		queue.enqueue(1);
 		queue.print();
+		queue.dequeue();
+		queue.print();
+		queue.dequeue();
+		queue.print();
+		queue.enqueue(7);
+		queue.print();
+		queue.enqueue(8);
+		queue.print();
+
 	}
 
 }
