@@ -7,7 +7,17 @@ package testPackage.stack;
 
 public class Stack {
 	public int array[] = new int[5];
-	public int top = -1;
+	private int top = -1;
+
+	// Top Getter
+	public int getTop() {
+		return this.top;
+	}
+
+	// Top Setter
+	public void setTop(int top) {
+		this.top = top;
+	}
 	
 	// Push
 	public void push(int data) {

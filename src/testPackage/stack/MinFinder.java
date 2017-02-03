@@ -11,7 +11,7 @@ class MinKeeper {
     Stack minStack = new Stack();
     int getMin(String InputString) {
         for (int i=0; i<InputString.length(); i++) {
-            if (inputStack.top == -1 && minStack.top == -1){
+            if (inputStack.getTop() == -1 && minStack.getTop() == -1){
                 inputStack.push(Character.getNumericValue(InputString.charAt(i)));
                 minStack.push(Character.getNumericValue(InputString.charAt(i)));
             }

@@ -7,29 +7,38 @@ package testPackage.queue;
 
 public class Queue {
 	public int array[] = new int[5];
-	public int front = -1;
-	public int rear = -1;
+	private int front = 0;
+	private int rear = -1;
+
+	// Front Getter
+	public int getFront() {
+		return this.front;
+	}
+
+	// Rear Getter
+	public int getRear() {
+		return this.rear;
+	}
+
+	// Front Setter
+	public void setFront(int front) {
+		this.front = front;
+	}
+
+	// Rear Setter
+	public void setRear(int rear) {
+		this.rear = rear;
+	}
 	
 	// Enqueue
 	public void enqueue(int data) {
-		if (front == -1 && rear == -1) {
-			front++;
-			rear++;
-			array[rear] = data;
-			System.out.println("Enqueued element to queue is " +array[rear]);
-		}
-		else if (front >= 0 && rear < array.length-1) {
+		if (rear == -1 || (front >= 0 && rear < array.length-1) || rear < front) {
 			rear++;
 			array[rear] = data;
 			System.out.println("Enqueued element to queue is " +array[rear]);
 		}
 		else if (front > 0 && rear == array.length-1) {
 			rear = 0;
-			array[rear] = data;
-			System.out.println("Enqueued element to queue is " +array[rear]);
-		}
-		else if (rear < front) {
-			rear++;
 			array[rear] = data;
 			System.out.println("Enqueued element to queue is " +array[rear]);
 		}
@@ -40,11 +49,7 @@ public class Queue {
 	
 	// Dequeue
 	public int dequeue() {
-		if (front == -1 && rear == -1) {
-			System.out.println("Queue is Empty");
-			return -1;
-		}
-		else if (array[front] == 0) {
+		if (rear == -1 || array[front] == 0) {
 			System.out.println("Queue is Empty");
 			return -1;
 		}

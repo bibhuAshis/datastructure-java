@@ -9,9 +9,9 @@ package testPackage.stack;
 class AscendingSorter{
     Stack sortedStack = new Stack();
     public void sortStack(Stack inputStack) {
-        while (inputStack.top != -1) {
+        while (inputStack.getTop() != -1) {
             int temp = inputStack.pop();
-        while (sortedStack.top != -1 && temp < sortedStack.peep())
+        while (sortedStack.getTop() != -1 && temp < sortedStack.peep())
                 inputStack.push(sortedStack.pop());
             sortedStack.push(temp);
         }

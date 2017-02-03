@@ -13,10 +13,10 @@ class Shuffle {
         for (int i=0; i<k; i++) {
             stack.push(queue.dequeue());
         }
-        while (stack.top != -1) {
+        while (stack.getTop() != -1) {
             queue.enqueue(stack.pop());
         }
-        while (queue.front != 0) {
+        while (queue.getFront() != 0) {
             queue.enqueue(queue.dequeue());
         }
         queue.print();

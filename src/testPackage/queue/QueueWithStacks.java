@@ -12,7 +12,7 @@ class TwoStacks {
 
     // Enqueue
     public void enqueue(int input) {
-        if (stack1.top >= stack1.array.length-1) {
+        if (stack1.getTop() >= stack1.array.length-1) {
             System.out.println("Queue is Full");
         }
         else {
@@ -23,20 +23,20 @@ class TwoStacks {
 
     // Dequeue
     public int dequeue() {
-        if (stack1.top == -1 && stack2.top != -1) {
+        if (stack1.getTop() == -1 && stack2.getTop() != -1) {
             int temp = stack2.pop();
             System.out.println("Dequeued element from queue is " +temp);
             return (temp);
         }
-        else if (stack1.top !=-1 && stack2.top == -1){
-            while (stack1.top != -1) {
+        else if (stack1.getTop() !=-1 && stack2.getTop() == -1){
+            while (stack1.getTop() != -1) {
                 stack2.push(stack1.pop());
             }
             int temp = stack2.pop();
             System.out.println("Dequeued element from queue is " +temp);
             return (temp);
         }
-        else if (stack1.top == -1 && stack2.top == -1) {
+        else if (stack1.getTop() == -1 && stack2.getTop() == -1) {
             System.out.println("Queue is Empty");
         }
         return -1;
@@ -44,7 +44,7 @@ class TwoStacks {
 
     // Print
     public void print () {
-        if (stack1.top != -1 && stack2.top == -1) {
+        if (stack1.getTop() != -1 && stack2.getTop() == -1) {
             System.out.println("The queue is:");
             for (int i = 0; i < stack1.array.length; i++) {
                 System.out.print(" " + stack1.array[i]);

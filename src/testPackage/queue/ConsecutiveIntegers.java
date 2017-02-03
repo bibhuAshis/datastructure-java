@@ -11,17 +11,17 @@ class ConsecutiveChecker {
     Queue queue = new Queue();
     boolean consecutive = true;
     public void checkConsecutiveness(Stack stack) {
-        while (stack.top != -1) {
+        while (stack.getTop() != -1) {
             queue.enqueue(stack.pop());
         }
         queue.print();
-        while (queue.front <= queue.rear) {
+        while (queue.getFront() <= queue.getRear()) {
             stack.push(queue.dequeue());
         }
         stack.print();
-        while (stack.top != -1) {
+        while (stack.getTop() != -1) {
             int m = stack.pop();
-            if (stack.top != -1) {
+            if (stack.getTop() != -1) {
                 int n = stack.pop();
                 if (Math.abs(m-n) != 1) {
                     consecutive = false;

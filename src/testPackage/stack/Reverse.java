@@ -15,7 +15,7 @@ class StackReverser {
         }
         System.out.println("The stack is ");
         stack.print();
-        while (stack.top != -1 ) {
+        while (stack.getTop() != -1 ) {
             reversedStack.push(stack.pop());
         }
         System.out.println("The reversed stack is ");

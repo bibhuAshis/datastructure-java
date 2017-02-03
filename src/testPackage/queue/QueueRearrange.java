@@ -8,11 +8,11 @@ package testPackage.queue;
 class Rearrange {
     Queue tempQueue = new Queue();
     public void rearrangeQueue(Queue queue) {
-        int m = queue.rear + 1;
+        int m = queue.getRear() + 1;
         for (int i=0; i<m / 2; i++) {
             tempQueue.enqueue(queue.dequeue());
         }
-        while (queue.front < m && tempQueue.front < m/2) {
+        while (queue.getFront() < m && tempQueue.getFront() < m/2) {
             queue.enqueue(tempQueue.dequeue());
             queue.enqueue(queue.dequeue());
         }

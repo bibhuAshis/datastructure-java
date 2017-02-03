@@ -10,7 +10,7 @@ class QueuetoStack {
     Stack stack = new Stack();
     public void movetoStack(Queue queue) {
         int temp = queue.dequeue();
-        while (queue.front <= queue.rear) {
+        while (queue.getFront() <= queue.getRear()) {
             stack.push(queue.dequeue());
         }
         stack.push(temp);
