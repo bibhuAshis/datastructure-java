@@ -9,8 +9,15 @@ package testPackage.stack;
 
 //Class Stack
 class IStack {
-	 int array[] = new int[2];
-	 int top = -1;
+	 int array[];
+	 int top, size;
+
+	// Constructor
+	public IStack(int n) {
+		size = n;
+		array = new int[size];
+		top = -1;
+	}
 	 
 	 // Stack Push
 	 public void push(int data) {
@@ -70,10 +77,9 @@ class IStack {
 
 public class StackOfStacks {
 	
-	static IStack stackArray[] = new IStack[] {new IStack(), new IStack(), new IStack()};
+	static IStack stackArray[] = new IStack[] {new IStack(2), new IStack(2), new IStack(2)};
 	static int stackTop = 0;
-		
-	
+
 	// Stack of stacks Push
 	 public void stackPush(int stackData) {
 		 stackArray[stackTop].push(stackData);

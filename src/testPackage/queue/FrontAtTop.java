@@ -7,7 +7,7 @@ import testPackage.stack.Stack;
  *  queue appears at the top of the stack and the order of all other items is preserved.
  */
 class QueuetoStack {
-    Stack stack = new Stack();
+    Stack stack = new Stack(5);
     public void movetoStack(Queue queue) {
         int temp = queue.dequeue();
         while (queue.getFront() <= queue.getRear()) {
@@ -19,7 +19,7 @@ class QueuetoStack {
 }
 public class FrontAtTop {
     public static void main(String rgs[]) {
-        Queue queue = new Queue();
+        Queue queue = new Queue(5);
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);

@@ -7,7 +7,7 @@ package testPackage.stack;
 
 // Duplicate Removing Class
 class RemoveDuplicate {
-    Stack stack = new Stack();
+    Stack stack = new Stack(5);
     public  void remDup(int inputStack[]) {
         int i=0;
         while (i < inputStack.length) {

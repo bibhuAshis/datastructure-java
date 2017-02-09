@@ -7,7 +7,7 @@ package testPackage.stack;
 
 // Postfix Evaluation Class
 class Evaluator {
-    Stack stack = new Stack();
+    Stack stack = new Stack(5);
     int result = 0;
     int evaluate (String PostfixInput) {
         for (int i=0; i<PostfixInput.length(); i++) {

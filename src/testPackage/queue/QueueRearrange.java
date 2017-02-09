@@ -6,7 +6,7 @@ package testPackage.queue;
  * second half of the list.
  */
 class Rearrange {
-    Queue tempQueue = new Queue();
+    Queue tempQueue = new Queue(5);
     public void rearrangeQueue(Queue queue) {
         int m = queue.getRear() + 1;
         for (int i=0; i<m / 2; i++) {
@@ -21,11 +21,12 @@ class Rearrange {
 }
 public class QueueRearrange {
     public static void main (String args[]) {
-        Queue queue = new Queue();
+        Queue queue = new Queue(5);
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);
         queue.enqueue(4);
+        queue.enqueue(5);
         Rearrange rearranger = new Rearrange();
         rearranger.rearrangeQueue(queue);
     }

@@ -7,7 +7,7 @@ package testPackage.stack;
 
 // Infix to Postfix class
 class InfixToPostfix {
-    CharStack postfixConverter = new CharStack();
+    CharStack postfixConverter = new CharStack(5);
     String postfixOutput = " ";
     String convertToPostfix(String infixInput) {
         for (int i=0; i<infixInput.length(); i++) {

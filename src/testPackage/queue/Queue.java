@@ -6,9 +6,16 @@ package testPackage.queue;
  */
 
 public class Queue {
-	public int array[] = new int[5];
-	private int front = 0;
-	private int rear = -1;
+	public int array[];
+	private int front, rear, size;
+
+	// Constructor
+	public Queue(int n) {
+		size = n;
+		array = new int[size];
+		front = 0;
+		rear = -1;
+	}
 
 	// Front Getter
 	public int getFront() {
@@ -85,7 +92,7 @@ public class Queue {
 	}
 
 	public static void main(String args []) {
-		Queue queue = new Queue();
+		Queue queue = new Queue(5);
 		queue.enqueue(1);
 		queue.enqueue(2);
 		queue.enqueue(3);

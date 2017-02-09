@@ -8,7 +8,7 @@ import testPackage.stack.Stack;
  * consecutive or not. If the stack has odd number of elements, the element at the top is left out of a pair.
  */
 class ConsecutiveChecker {
-    Queue queue = new Queue();
+    Queue queue = new Queue(5);
     boolean consecutive = true;
     public void checkConsecutiveness(Stack stack) {
         while (stack.getTop() != -1) {
@@ -39,7 +39,7 @@ class ConsecutiveChecker {
 }
 public class ConsecutiveIntegers {
     public static void main (String args[]) {
-        Stack stack = new Stack();
+        Stack stack = new Stack(5);
         stack.push(4);
         stack.push(5);
         stack.push(-2);

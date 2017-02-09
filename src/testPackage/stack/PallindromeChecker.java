@@ -8,7 +8,7 @@ package testPackage.stack;
 
 // Palindrome Checking Logic
 class Checker {
-    CharStack stack = new CharStack();
+    CharStack stack = new CharStack(5);
     void checkPalindrome(String inputString) {
         int i=0;
         boolean isPalindrome = true;

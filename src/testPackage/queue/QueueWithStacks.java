@@ -7,8 +7,8 @@ import testPackage.stack.Stack;
  * Problem Statement: How can you implement a queue using two stacks?
  */
 class TwoStacks {
-    Stack stack1 = new Stack();
-    Stack stack2 = new Stack();
+    Stack stack1 = new Stack(5);
+    Stack stack2 = new Stack(5);
 
     // Enqueue
     public void enqueue(int input) {

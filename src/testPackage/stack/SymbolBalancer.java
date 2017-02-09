@@ -7,7 +7,7 @@ package testPackage.stack;
 
 // Balancing Logic
 class Balancer {
-	CharStack symbols = new CharStack();
+	CharStack symbols = new CharStack(5);
 	boolean isBalanced = true;
 	public void checkBalance (String symbolArray) {
 		for (int i=0; i<symbolArray.length(); i++) {

@@ -7,8 +7,8 @@ package testPackage.stack;
 
 // Min Keeper Class
 class MinKeeper {
-    Stack inputStack = new Stack();
-    Stack minStack = new Stack();
+    Stack inputStack = new Stack(5);
+    Stack minStack = new Stack(5);
     int getMin(String InputString) {
         for (int i=0; i<InputString.length(); i++) {
             if (inputStack.getTop() == -1 && minStack.getTop() == -1){

@@ -7,7 +7,7 @@ package testPackage.stack;
 
 // Sorting Class
 class AscendingSorter{
-    Stack sortedStack = new Stack();
+    Stack sortedStack = new Stack(5);
     public void sortStack(Stack inputStack) {
         while (inputStack.getTop() != -1) {
             int temp = inputStack.pop();
@@ -22,7 +22,7 @@ class AscendingSorter{
 // Main Class
 public class Ascending {
     public static void main(String args[]) {
-        Stack inputStack = new Stack();
+        Stack inputStack = new Stack(5);
         inputStack.push(5);
         inputStack.push(1);
         inputStack.push(3);

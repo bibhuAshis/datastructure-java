@@ -6,7 +6,7 @@ import testPackage.stack.Stack;
  * Problem Statement: Give an algorithm for reversing a queue.
  */
 class ReversingQueue {
-    Stack stack = new Stack();
+    Stack stack = new Stack(5);
     public void reverse(Queue inputQueue) {
         while (inputQueue.getFront() != inputQueue.getRear()) {
             stack.push(inputQueue.dequeue());
@@ -18,7 +18,7 @@ class ReversingQueue {
 }
 public class QueueReverser {
     public static void main (String args[]) {
-        Queue inputQueue = new Queue();
+        Queue inputQueue = new Queue(5);
         inputQueue.enqueue(1);
         inputQueue.enqueue(2);
         inputQueue.enqueue(3);

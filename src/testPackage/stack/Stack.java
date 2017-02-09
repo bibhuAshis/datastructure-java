@@ -6,8 +6,15 @@ package testPackage.stack;
  */
 
 public class Stack {
-	public int array[] = new int[5];
-	private int top = -1;
+	public int array[];
+	protected int top, size;
+
+	// Constructor
+	public Stack(int n) {
+		size = n;
+		array = new int[size];
+		top = -1;
+	}
 
 	// Top Getter
 	public int getTop() {
@@ -64,7 +71,7 @@ public class Stack {
 		System.out.println();
 	}
 	public static void main (String args[]) {
-		Stack stack = new Stack();
+		Stack stack = new Stack(5);
 		stack.peep();
 		stack.push(1);
 		stack.peep();

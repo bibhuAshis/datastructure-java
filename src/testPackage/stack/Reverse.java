@@ -7,8 +7,8 @@ package testPackage.stack;
 
 // Reversing Logic
 class StackReverser {
-    Stack stack = new Stack();
-    Stack reversedStack = new Stack();
+    Stack stack = new Stack(5);
+    Stack reversedStack = new Stack(5);
     int reverse(int input[]) {
         for (int i=0; i<input.length; i++) {
             stack.push(input[i]);

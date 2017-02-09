@@ -6,8 +6,15 @@ package testPackage.stack;
  */
 
 public class CharStack {
-    char array[] = new char[5];
-    int top = -1;
+    char array[];
+    int top, size;
+
+    // Constructor
+    public CharStack(int n) {
+        size = n;
+        array = new char[size];
+        top = -1;
+    }
 
     // Push
     public void push(char data) {
@@ -54,7 +61,7 @@ public class CharStack {
         System.out.println();
     }
     public static void main (String args[]) {
-        CharStack stack = new CharStack();
+        CharStack stack = new CharStack(5);
         stack.peep();
         stack.push('[');
         stack.peep();

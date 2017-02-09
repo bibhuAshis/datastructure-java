@@ -8,7 +8,7 @@ import testPackage.stack.Stack;
  * leaving the other elements in the same relative order?
  */
 class Shuffle {
-    Stack stack = new Stack();
+    Stack stack = new Stack(5);
     public void shuffleQueue(Queue queue, int k) {
         for (int i=0; i<k; i++) {
             stack.push(queue.dequeue());
@@ -24,7 +24,7 @@ class Shuffle {
 }
 public class QueueShuffle {
     public static void main (String args[]) {
-        Queue queue = new Queue();
+        Queue queue = new Queue(5);
         int k = 3;
         queue.enqueue(1);
         queue.enqueue(2);

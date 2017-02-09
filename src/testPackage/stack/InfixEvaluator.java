@@ -7,8 +7,8 @@ package testPackage.stack;
 
 // Infix Evaluation Logic
 class Eval {
-    Stack operandStack = new Stack();
-    CharStack operatorStack = new CharStack();
+    Stack operandStack = new Stack(5);
+    CharStack operatorStack = new CharStack(5);
 
     public int calculate (char symbol, int operand1, int operand2) {
         int result = 0;

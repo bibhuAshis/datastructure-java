@@ -5,8 +5,8 @@ package testPackage.queue;
  * Problem Statement: How can you implement a stack using two queues?
  */
 class TwoQueues {
-    Queue queue1 = new Queue();
-    Queue queue2 = new Queue();
+    Queue queue1 = new Queue(5);
+    Queue queue2 = new Queue(5);
 
     // Push
     public void push(int data) {

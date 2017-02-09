@@ -7,10 +7,17 @@ package testPackage.stack;
 
 public class ThreeStacks {
 	
-	int array[] = new int [5];
-	int top1 = -3;
-	int top2 = -2;
-	int top3 = -1;
+	int array[];
+	int top1, top2 = -2, top3, size;
+
+	// Constructor
+	public ThreeStacks(int n) {
+		size = n;
+		array = new int[size];
+		top1 = -3;
+		top2 = -2;
+		top3 = -1;
+	}
 	
 	// Push
 	public void push(int data, int stackno) {
@@ -156,7 +163,7 @@ public class ThreeStacks {
 	}
 	
 	public static void main(String args[]) {
-		ThreeStacks stack = new ThreeStacks();
+		ThreeStacks stack = new ThreeStacks(5);
 		stack.push(1, 1);
 		stack.peep(1);
 		stack.push(2, 2);
