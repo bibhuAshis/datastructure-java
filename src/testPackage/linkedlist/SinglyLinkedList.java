@@ -6,8 +6,8 @@ package testPackage.linkedlist;
  */
 
 class Node {
-    int data;
-    Node next;
+    protected int data;
+    protected Node next;
 
     /*  Constructor  */
     public Node()
@@ -46,9 +46,143 @@ class Node {
 }
 
 class LinkedList {
-    int data;
-    LinkedList head;
-    LinkedList end;
+    public int size;
+    protected Node head;
+    protected Node end;
+
+    /*  Constructor  */
+    public LinkedList()
+    {
+        head = null;
+        end = null;
+        size = 0;
+    }
+
+    /*  Function to check if list is empty  */
+    public boolean isEmpty()
+    {
+        return head == null;
+    }
+
+    /*  Function to get size of list  */
+    public int getSize()
+    {
+        return size;
+    }
+
+    /*  Function to insert an element at beginning  */
+    public void insertAtStart(int val)
+    {
+        Node nptr = new Node(val, null);
+        size++ ;
+        if(head == null)
+        {
+            head = nptr;
+            end = head;
+        }
+        else
+        {
+            nptr.setNext(head);
+            head = nptr;
+        }
+    }
+    /*  Function to insert an element at end  */
+    public void insertAtEnd(int val)
+    {
+        Node nptr = new Node(val,null);
+        size++ ;
+        if(head == null)
+        {
+            head = nptr;
+            end = head;
+        }
+        else
+        {
+            end.setNext(nptr);
+            end = nptr;
+        }
+    }
+    /*  Function to insert an element at position  */
+    public void insertAtPos(int val , int pos)
+    {
+        Node nptr = new Node(val, null);
+        Node ptr = head;
+        pos = pos - 1 ;
+        for (int i = 1; i < size; i++)
+        {
+            if (i == pos)
+            {
+                Node tmp = ptr.getNext() ;
+                ptr.setNext(nptr);
+                nptr.setNext(tmp);
+                break;
+            }
+            ptr = ptr.getNext();
+        }
+        size++ ;
+    }
+    /*  Function to delete an element at position  */
+    public void deleteAtPos(int pos)
+    {
+        if (pos == 1)
+        {
+            head = head.getNext();
+            size--;
+            return ;
+        }
+        if (pos == size)
+        {
+            Node s = head;
+            Node t = head;
+            while (s != end)
+            {
+                t = s;
+                s = s.getNext();
+            }
+            end = t;
+            end.setNext(null);
+            size --;
+            return;
+        }
+        Node ptr = head;
+        pos = pos - 1 ;
+        for (int i = 1; i < size - 1; i++)
+        {
+            if (i == pos)
+            {
+                Node tmp = ptr.getNext();
+                tmp = tmp.getNext();
+                ptr.setNext(tmp);
+                break;
+            }
+            ptr = ptr.getNext();
+        }
+        size-- ;
+    }
+    /*  Function to display elements  */
+    public void display()
+    {
+        System.out.print("\nSingly Linked List = ");
+        if (size == 0)
+        {
+            System.out.print("empty\n");
+            return;
+        }
+        if (head.getNext() == null)
+        {
+            System.out.println(head.getData() );
+            return;
+        }
+        Node ptr = head;
+        System.out.print(head.getData()+ "->");
+        ptr = head.getNext();
+        while (ptr.getNext() != null)
+        {
+            System.out.print(ptr.getData()+ "->");
+            ptr = ptr.getNext();
+        }
+        System.out.print(ptr.getData()+ "\n");
+    }
 
 }
 
