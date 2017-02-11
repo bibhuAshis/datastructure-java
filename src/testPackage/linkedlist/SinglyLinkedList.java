@@ -9,35 +9,39 @@ class Node {
     protected int data;
     protected Node next;
 
-    /*  Constructor  */
+    // Constructor
     public Node()
     {
         data = 0;
         next = null;
     }
-    /*  Constructor  */
+
+    // Constructor
     public Node(int d, Node n)
     {
         data = d;
         next = n;
     }
 
-    /*  Function to set next to next Node  */
+    // Function to set next to next Node
     public void setNext(Node n)
     {
         next = n;
     }
-    /*  Function to set data to current Node  */
+
+    // Function to set data to current Node
     public void setData(int d)
     {
         data = d;
     }
-    /*  Function to get next to next node  */
+
+    // Function to get next to next node
     public Node getNext()
     {
         return next;
     }
-    /*  Function to get data from current Node  */
+
+    // Function to get data from current Node
     public int getData()
     {
         return data;
@@ -50,7 +54,7 @@ class LinkedList {
     protected Node head;
     protected Node end;
 
-    /*  Constructor  */
+    // Constructor
     public LinkedList()
     {
         head = null;
@@ -58,19 +62,7 @@ class LinkedList {
         size = 0;
     }
 
-    /*  Function to check if list is empty  */
-    public boolean isEmpty()
-    {
-        return head == null;
-    }
-
-    /*  Function to get size of list  */
-    public int getSize()
-    {
-        return size;
-    }
-
-    /*  Function to insert an element at beginning  */
+    // Function to insert an element at beginning
     public void insertAtStart(int val)
     {
         Node nptr = new Node(val, null);
@@ -86,7 +78,8 @@ class LinkedList {
             head = nptr;
         }
     }
-    /*  Function to insert an element at end  */
+
+    // Function to insert an element at end
     public void insertAtEnd(int val)
     {
         Node nptr = new Node(val,null);
@@ -102,7 +95,8 @@ class LinkedList {
             end = nptr;
         }
     }
-    /*  Function to insert an element at position  */
+
+    // Function to insert an element at position
     public void insertAtPos(int val , int pos)
     {
         Node nptr = new Node(val, null);
@@ -121,29 +115,32 @@ class LinkedList {
         }
         size++ ;
     }
-    /*  Function to delete an element at position  */
+
+    // Function to delete an element at beginning
+    public void deleteAtStart()
+    {
+        head = head.getNext();
+        size--;
+    }
+
+    // Function to delete an element at end
+    public void deleteAtEnd()
+    {
+        Node s = head;
+        Node t = head;
+        while (s != end)
+        {
+            t = s;
+            s = s.getNext();
+        }
+        end = t;
+        end.setNext(null);
+        size --;
+    }
+
+    // Function to delete an element at position
     public void deleteAtPos(int pos)
     {
-        if (pos == 1)
-        {
-            head = head.getNext();
-            size--;
-            return ;
-        }
-        if (pos == size)
-        {
-            Node s = head;
-            Node t = head;
-            while (s != end)
-            {
-                t = s;
-                s = s.getNext();
-            }
-            end = t;
-            end.setNext(null);
-            size --;
-            return;
-        }
         Node ptr = head;
         pos = pos - 1 ;
         for (int i = 1; i < size - 1; i++)
@@ -159,18 +156,19 @@ class LinkedList {
         }
         size-- ;
     }
-    /*  Function to display elements  */
+
+    // Function to display elements
     public void display()
     {
-        System.out.print("\nSingly Linked List = ");
+        System.out.print("The Singly Linked List is: ");
         if (size == 0)
         {
-            System.out.print("empty\n");
+            System.out.println("Empty");
             return;
         }
         if (head.getNext() == null)
         {
-            System.out.println(head.getData() );
+            System.out.println(head.getData());
             return;
         }
         Node ptr = head;
@@ -183,9 +181,28 @@ class LinkedList {
         }
         System.out.print(ptr.getData()+ "\n");
     }
-
 }
 
 public class SinglyLinkedList {
+    public static void main (String args[]) {
+        LinkedList singlyLinkedList = new LinkedList();
+        singlyLinkedList.display();
+        singlyLinkedList.insertAtStart(2);
+        singlyLinkedList.display();
+        singlyLinkedList.insertAtEnd(5);
+        singlyLinkedList.display();
+        singlyLinkedList.insertAtPos(4,2);
+        singlyLinkedList.display();
+        singlyLinkedList.insertAtStart(1);
+        singlyLinkedList.display();
+        singlyLinkedList.insertAtPos(3, 3);
+        singlyLinkedList.display();
+        singlyLinkedList.deleteAtStart();
+        singlyLinkedList.display();
+        singlyLinkedList.deleteAtEnd();
+        singlyLinkedList.display();
+        singlyLinkedList.deleteAtPos(2);
+        singlyLinkedList.display();
+    }
 
 }
