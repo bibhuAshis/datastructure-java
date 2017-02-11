@@ -166,20 +166,22 @@ class LinkedList {
             System.out.println("Empty");
             return;
         }
-        if (head.getNext() == null)
+        else if (head.getNext() == null)
         {
             System.out.println(head.getData());
             return;
         }
-        Node ptr = head;
-        System.out.print(head.getData()+ "->");
-        ptr = head.getNext();
-        while (ptr.getNext() != null)
-        {
-            System.out.print(ptr.getData()+ "->");
-            ptr = ptr.getNext();
+        else {
+            Node ptr = head;
+            System.out.print(head.getData()+ "->");
+            ptr = head.getNext();
+            while (ptr.getNext() != null)
+            {
+                System.out.print(ptr.getData()+ "->");
+                ptr = ptr.getNext();
+            }
+            System.out.print(ptr.getData()+ "\n");
         }
-        System.out.print(ptr.getData()+ "\n");
     }
 }
 
@@ -204,5 +206,4 @@ public class SinglyLinkedList {
         singlyLinkedList.deleteAtPos(2);
         singlyLinkedList.display();
     }
-
 }
