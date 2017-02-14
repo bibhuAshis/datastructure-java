@@ -2,19 +2,10 @@ package testPackage.linkedlist;
 
 /**
  * Created by bajmd on 12/02/17.
- * Problem Statement: Check if the given linked list is a snake (it is null terminated) or a snail (it has a loop).
+ * Problem Statement: Find the start node of the loop.
  */
-class LoopCreator {
-    public void createLoop (LinkedList list, int n) {
-        Node pTemp = list.head;
-        for (int i=0; i<n; i++) {
-            pTemp = pTemp.getNext();
-        }
-        list.end.next = pTemp;
-    }
-}
-class LoopFinder {
-    public void findLoop (LinkedList list) {
+class StartNodeFinder {
+    public void findStartNode (LinkedList list) {
         Node pSlow = list.head;
         Node pFast = list.head;
         boolean snake = true;
@@ -22,18 +13,23 @@ class LoopFinder {
             pSlow = pSlow.next;
             pFast = pFast.next.next;
             if (pSlow == pFast){
-                System.out.println("The list is a snail");
                 snake = false;
                 break;
             }
         }
-        if (snake) {
-            System.out.println("The list is a snake");
+        if (!snake) {
+            pSlow = list.head;
+            while (pSlow != pFast) {
+                pSlow = pSlow.next;
+                pFast = pFast.next;
+            }
+            System.out.println("The start of loop is: " +pSlow.data);
         }
     }
+
 }
-public class SnakeOrSnailFinder {
-    public static void main (String args[]) {
+public class StartOfLoopFinder {
+    public static void main(String args[]) {
         // Create normal list
         LinkedList list = new LinkedList();
         list.insertAtStart(1);
@@ -50,7 +46,7 @@ public class SnakeOrSnailFinder {
         loopingList.createLoop(list, 2);
 
         // Find if the list has loop
-        LoopFinder loopedList = new LoopFinder();
-        loopedList.findLoop(list);
+        StartNodeFinder loopedList = new StartNodeFinder();
+        loopedList.findStartNode(list);
     }
 }
