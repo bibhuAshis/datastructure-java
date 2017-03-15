@@ -10,13 +10,6 @@ class Node {
     protected Node next;
 
     // Constructor
-    public Node()
-    {
-        data = 0;
-        next = null;
-    }
-
-    // Constructor
     public Node(int d, Node n)
     {
         data = d;
@@ -26,25 +19,25 @@ class Node {
     // Function to set next to next Node
     public void setNext(Node n)
     {
-        next = n;
+        this.next = n;
     }
 
     // Function to set data to current Node
     public void setData(int d)
     {
-        data = d;
+        this.data = d;
     }
 
     // Function to get next to next node
     public Node getNext()
     {
-        return next;
+        return this.next;
     }
 
     // Function to get data from current Node
     public int getData()
     {
-        return data;
+        return this.data;
     }
 
 }
@@ -183,9 +176,7 @@ class LinkedList {
             System.out.print(ptr.getData()+ "\n");
         }
     }
-}
 
-public class SinglyLinkedList {
     public static void main (String args[]) {
         LinkedList singlyLinkedList = new LinkedList();
         singlyLinkedList.display();

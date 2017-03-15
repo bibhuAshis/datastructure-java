@@ -15,7 +15,7 @@ class MinKeeper {
                 inputStack.push(Character.getNumericValue(InputString.charAt(i)));
                 minStack.push(Character.getNumericValue(InputString.charAt(i)));
             }
-            else if(Character.getNumericValue(InputString.charAt(i)) < minStack.peep()){
+            else if(Character.getNumericValue(InputString.charAt(i)) < minStack.peek()){
                 inputStack.push(Character.getNumericValue(InputString.charAt(i)));
                 minStack.push(Character.getNumericValue(InputString.charAt(i)));
             }
@@ -23,7 +23,7 @@ class MinKeeper {
                 inputStack.push(Character.getNumericValue(InputString.charAt(i)));
             }
         }
-        return minStack.peep();
+        return minStack.peek();
     }
 }
 

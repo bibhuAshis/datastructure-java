@@ -47,7 +47,7 @@ class Eval {
                 operatorStack.push(inputString.charAt(i));
             }
             else if (inputString.charAt(i) == '*' || inputString.charAt(i) == '/') {
-                while (!(operatorStack.peep() == '+' || operatorStack.peep() == '-' || operatorStack.top == -1)) {
+                while (!(operatorStack.peek() == '+' || operatorStack.peek() == '-' || operatorStack.top == -1)) {
                     operandStack.push(calculate(operatorStack.pop(), operandStack.pop(), operandStack.pop()));
                 }
                 operatorStack.push(inputString.charAt(i));

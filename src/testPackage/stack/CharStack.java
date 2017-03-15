@@ -42,8 +42,8 @@ public class CharStack {
         }
     }
 
-    // Peep
-    public char peep() {
+    // Peek
+    public char peek() {
         if (top < 0) {
             return ' ';
         }
@@ -62,29 +62,29 @@ public class CharStack {
     }
     public static void main (String args[]) {
         CharStack stack = new CharStack(5);
-        stack.peep();
+        stack.peek();
         stack.push('[');
-        stack.peep();
+        stack.peek();
         stack.push('{');
-        stack.peep();
+        stack.peek();
         stack.push('(');
-        stack.peep();
+        stack.peek();
         stack.push(')');
-        stack.peep();
+        stack.peek();
         stack.push('}');
-        stack.peep();
+        stack.peek();
         stack.print();
         stack.push(']'); // Pushing to Full Stack
         stack.pop();
-        stack.peep();
+        stack.peek();
         stack.pop();
-        stack.peep();
+        stack.peek();
         stack.pop();
-        stack.peep();
+        stack.peek();
         stack.pop();
-        stack.peep();
+        stack.peek();
         stack.pop();
-        stack.peep();
+        stack.peek();
         stack.print();
         stack.pop(); // Popping from Empty Stack
     }

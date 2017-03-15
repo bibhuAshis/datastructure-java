@@ -52,8 +52,8 @@ public class Stack {
 		}
 	}
 	
-	// Peep
-	public int peep() {
+	// Peek
+	public int peek() {
 		if (top < 0) {
 			return 0;
 		}
@@ -72,29 +72,29 @@ public class Stack {
 	}
 	public static void main (String args[]) {
 		Stack stack = new Stack(5);
-		stack.peep();
+		stack.peek();
 		stack.push(1);
-		stack.peep();
+		stack.peek();
 		stack.push(2);
-		stack.peep();
+		stack.peek();
 		stack.push(3);
-		stack.peep();
+		stack.peek();
 		stack.push(4);
-		stack.peep();
+		stack.peek();
 		stack.push(5);
-		stack.peep();
+		stack.peek();
 		stack.print();
 		stack.push(6); // Pushing to Full Stack
 		stack.pop();
-		stack.peep();
+		stack.peek();
 		stack.pop();
-		stack.peep();
+		stack.peek();
 		stack.pop();
-		stack.peep();
+		stack.peek();
 		stack.pop();
-		stack.peep();
+		stack.peek();
 		stack.pop();
-		stack.peep();
+		stack.peek();
 		stack.print();
 		stack.pop(); // Popping from Empty Stack
 	}

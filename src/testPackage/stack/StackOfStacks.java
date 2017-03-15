@@ -58,8 +58,8 @@ class IStack {
 		 }
 	 }
 	 
-	 // Stack Peep
-	 public void peep() {
+	 // Stack Peek
+	 public void peek() {
 		 if (top < 0) {
 			 StackOfStacks.stackTop--;
 			 if (StackOfStacks.stackTop < 0) {
@@ -90,9 +90,9 @@ public class StackOfStacks {
 		 stackArray[stackTop].pop();
 	 }
 	 
-	 // Stack of stacks Peep
-	 public void stackPeep() {
-		 stackArray[stackTop].peep();
+	 // Stack of stacks Peek
+	 public void stackPeek() {
+		 stackArray[stackTop].peek();
 	 }	
 
 	public static void main(String[] args) {

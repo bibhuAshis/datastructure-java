@@ -15,12 +15,12 @@ class RemoveDuplicate {
                 stack.push(inputStack[i]);
                 i++;
             }
-            else if(inputStack[i] != stack.peep()) {
+            else if(inputStack[i] != stack.peek()) {
                 stack.push(inputStack[i]);
                 i++;
             }
             else {
-                while (i < inputStack.length && inputStack[i] == stack.peep()) {
+                while (i < inputStack.length && inputStack[i] == stack.peek()) {
                     i++;
                 }
                 stack.pop();
