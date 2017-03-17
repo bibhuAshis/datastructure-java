@@ -9,18 +9,18 @@ package testPackage.stack;
 class MinKeeper {
     Stack inputStack = new Stack(5);
     Stack minStack = new Stack(5);
-    int getMin(String InputString) {
-        for (int i=0; i<InputString.length(); i++) {
+    int getMin(int Input[]) {
+        for (int i=0; i<Input.length; i++) {
             if (inputStack.getTop() == -1 && minStack.getTop() == -1){
-                inputStack.push(Character.getNumericValue(InputString.charAt(i)));
-                minStack.push(Character.getNumericValue(InputString.charAt(i)));
+                inputStack.push(Input[i]);
+                minStack.push(Input[i]);
             }
-            else if(Character.getNumericValue(InputString.charAt(i)) < minStack.peek()){
-                inputStack.push(Character.getNumericValue(InputString.charAt(i)));
-                minStack.push(Character.getNumericValue(InputString.charAt(i)));
+            else if(Input[i] < minStack.peek()){
+                inputStack.push(Input[i]);
+                minStack.push(Input[i]);
             }
             else{
-                inputStack.push(Character.getNumericValue(InputString.charAt(i)));
+                inputStack.push(Input[i]);
             }
         }
         return minStack.peek();
@@ -31,7 +31,8 @@ class MinKeeper {
 public class MinFinder {
     public static void main(String args[]) {
         MinKeeper min = new MinKeeper();
-        System.out.println("Min Element is " + min.getMin("453"));
+        int input[] = {4,5,3,1};
+        System.out.println("Min Element is " + min.getMin(input));
     }
 
 }

@@ -77,7 +77,19 @@ class IStack {
 
 public class StackOfStacks {
 	
-	static IStack stackArray[] = new IStack[] {new IStack(2), new IStack(2), new IStack(2)};
+	static IStack stackArray[];
+
+	int sosTop, sosSize, isSize;
+
+	// Constructor
+	public StackOfStacks(int n, int m) {
+		sosSize = n;
+		isSize = m;
+		stackArray = new IStack[sosSize];
+		for (int i=0; i<sosSize; i++)
+			stackArray[i] = new IStack(isSize);
+		sosTop = -1;
+	}
 	static int stackTop = 0;
 
 	// Stack of stacks Push
@@ -96,8 +108,7 @@ public class StackOfStacks {
 	 }	
 
 	public static void main(String[] args) {
-		
-		StackOfStacks stack = new StackOfStacks();
+	 	StackOfStacks stack = new StackOfStacks(3, 2);
 		stack.stackPush(1);
 		stack.stackPush(2);
 		stack.stackPush(3);
