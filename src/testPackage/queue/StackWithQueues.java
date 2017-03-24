@@ -71,6 +71,7 @@ public class StackWithQueues {
         stack.push(3);
         stack.push(4);
         stack.push(5);
+        stack.push(6);
         stack.print();
         stack.pop();
         stack.print();

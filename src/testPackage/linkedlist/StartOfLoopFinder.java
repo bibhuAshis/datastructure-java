@@ -43,7 +43,7 @@ public class StartOfLoopFinder {
 
         // Create looped list from normal list
         LoopCreator loopingList = new LoopCreator();
-        loopingList.createLoop(list, 2);
+        loopingList.createLoop(list, 3);
 
         // Find if the list has loop
         StartNodeFinder loopedList = new StartNodeFinder();
