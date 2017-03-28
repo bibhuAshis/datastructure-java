@@ -11,7 +11,7 @@ class RemoveDuplicate {
     public  void remDup(int inputStack[]) {
         int i=0;
         while (i < inputStack.length) {
-            if (stack.getTop() == -1) {
+            if (stack.isEmpty()) {
                 stack.push(inputStack[i]);
                 i++;
             }

@@ -60,6 +60,15 @@ public class CharStack {
         }
         System.out.println();
     }
+
+    // Is Empty
+    public boolean isEmpty() {
+        if (top == -1)
+            return true;
+        else
+            return false;
+    }
+
     public static void main (String args[]) {
         CharStack stack = new CharStack(5);
         stack.peek();

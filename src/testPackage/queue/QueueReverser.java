@@ -11,7 +11,7 @@ class ReversingQueue {
         while (inputQueue.getFront() != inputQueue.getRear()) {
             stack.push(inputQueue.dequeue());
         }
-        while (stack.getTop() != -1) {
+        while (!stack.isEmpty()) {
             inputQueue.enqueue(stack.pop());
         }
     }

@@ -14,12 +14,12 @@ class InfixToPostfix {
             if (infixInput.charAt(i) == '(')
                 postfixConverter.push(infixInput.charAt(i));
             else if (infixInput.charAt(i) == '+' || infixInput.charAt(i) == '-'){
-                while (!(postfixConverter.peek() == '(' || postfixConverter.top == -1))
+                while (!(postfixConverter.peek() == '(' || postfixConverter.isEmpty()))
                     postfixOutput = postfixOutput + postfixConverter.pop();
                 postfixConverter.push(infixInput.charAt(i));
             }
             else if ((infixInput.charAt(i) == '*' || infixInput.charAt(i) == '/') && (!(postfixConverter.peek() == '*' || postfixConverter.peek() == '/'))){
-                while (!(postfixConverter.peek() == '(' || postfixConverter.peek() == '+' || postfixConverter.peek() == '-' || postfixConverter.top == -1))
+                while (!(postfixConverter.peek() == '(' || postfixConverter.peek() == '+' || postfixConverter.peek() == '-' || postfixConverter.isEmpty()))
                     postfixOutput = postfixOutput + postfixConverter.pop();
                 postfixConverter.push(infixInput.charAt(i));
             }
@@ -31,7 +31,7 @@ class InfixToPostfix {
             else
                 postfixOutput = postfixOutput + infixInput.charAt(i);
         }
-        while (postfixConverter.top != -1)
+        while (!postfixConverter.isEmpty())
             postfixOutput = postfixOutput + postfixConverter.pop();
         return postfixOutput;
     }

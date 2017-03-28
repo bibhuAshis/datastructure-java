@@ -37,17 +37,17 @@ class Eval {
     }
     public int evalInfix(String inputString) {
         for (int i=0; i<inputString.length(); i++) {
-            if ((inputString.charAt(i) == '+' || inputString.charAt(i) == '-' || inputString.charAt(i) == '*' || inputString.charAt(i) == '/') && (operatorStack.top == -1)) {
+            if ((inputString.charAt(i) == '+' || inputString.charAt(i) == '-' || inputString.charAt(i) == '*' || inputString.charAt(i) == '/') && (operatorStack.isEmpty())) {
                 operatorStack.push(inputString.charAt(i));
             }
             else if (inputString.charAt(i) == '+' || inputString.charAt(i) == '-') {
-                while (!(operatorStack.top == -1)) {
+                while (!(operatorStack.isEmpty())) {
                     operandStack.push(calculate(operatorStack.pop(), operandStack.pop(), operandStack.pop()));
                 }
                 operatorStack.push(inputString.charAt(i));
             }
             else if (inputString.charAt(i) == '*' || inputString.charAt(i) == '/') {
-                while (!(operatorStack.peek() == '+' || operatorStack.peek() == '-' || operatorStack.top == -1)) {
+                while (!(operatorStack.peek() == '+' || operatorStack.peek() == '-' || operatorStack.isEmpty())) {
                     operandStack.push(calculate(operatorStack.pop(), operandStack.pop(), operandStack.pop()));
                 }
                 operatorStack.push(inputString.charAt(i));
@@ -56,7 +56,7 @@ class Eval {
                 operandStack.push(Character.getNumericValue(inputString.charAt(i)));
             }
         }
-        while (operatorStack.top != -1) {
+        while (!operatorStack.isEmpty()) {
             operandStack.push(calculate(operatorStack.pop(), operandStack.pop(), operandStack.pop()));
         }
         return operandStack.pop();

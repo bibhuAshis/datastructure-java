@@ -70,6 +70,15 @@ public class Stack {
 		}
 		System.out.println();
 	}
+
+	// Is Empty
+	public boolean isEmpty() {
+		if (top == -1)
+			return true;
+		else
+			return false;
+	}
+
 	public static void main (String args[]) {
 		Stack stack = new Stack(5);
 		stack.peek();
