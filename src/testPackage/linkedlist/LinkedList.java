@@ -12,8 +12,8 @@ class Node {
     // Constructor
     public Node(int d, Node n)
     {
-        data = d;
-        next = n;
+        this.data = d;
+        this.next = n;
     }
 
     // Function to set next to next Node

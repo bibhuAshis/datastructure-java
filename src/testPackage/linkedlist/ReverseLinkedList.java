@@ -4,7 +4,7 @@ package testPackage.linkedlist;
  * Created by bajmd on 23/03/17.
  */
 public class ReverseLinkedList {
-    void reverseList(LinkedList list) {
+    public Node reverseList(LinkedList list) {
         Node current = list.head;
         Node prev = null;
 
@@ -15,6 +15,7 @@ public class ReverseLinkedList {
             current = next;
         }
         list.head = prev;
+        return prev;
     }
     public static void main (String args[]) {
         ReverseLinkedList reversedlist = new ReverseLinkedList();

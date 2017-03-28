@@ -4,7 +4,7 @@ package testPackage.linkedlist;
  * Created by bajmd on 23/03/17.
  */
 public class MiddleofLinkedList {
-    void findMiddle (LinkedList list) {
+    public Node findMiddle (LinkedList list) {
         Node slow = list.head;
         Node fast = list.head;
 
@@ -13,6 +13,7 @@ public class MiddleofLinkedList {
             fast = fast.next.next;
         }
         System.out.println("Middle of the list is: " +slow.data);
+        return slow;
     }
     public static void main (String args[]) {
         MiddleofLinkedList middle = new MiddleofLinkedList();
