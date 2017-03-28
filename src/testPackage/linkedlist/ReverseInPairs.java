@@ -7,12 +7,12 @@ public class ReverseInPairs {
     void reversePairs(LinkedList list) {
         Node tmp1 = null;
         Node tmp2 = null;
-        while(list.head != null || list.head.next != null) {
+        while(list.head != null && list.head.next != null) {
             if (tmp1 != null) {
                 tmp1.next.next = list.head.next;
             }
             tmp1 = list.head.next;
-            list.head.next = tmp1.next.next;
+            list.head.next = list.head.next.next;
             tmp1.next = list.head;
             if (tmp2 == null) {
                 tmp2 = tmp1;
