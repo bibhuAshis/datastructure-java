@@ -92,7 +92,7 @@ class LinkedList {
     // Function to insert an element at position
     public void insertAtPos(int val , int pos)
     {
-        Node nptr = new Node(val, null);
+        /*Node nptr = new Node(val, null);
         Node ptr = head;
         pos = pos - 1 ;
         for (int i = 1; i < size; i++)
@@ -106,7 +106,23 @@ class LinkedList {
             }
             ptr = ptr.getNext();
         }
-        size++ ;
+        size++ ;*/
+        if (pos == 1) {
+            insertAtStart(val);
+        }
+        else if(pos > size+1 || pos < 1) {
+            System.out.println("Invalid Position");
+        }
+        else {
+            Node newptr = new Node(val, null);
+            Node tmp = head;
+            size++;
+            for (int i=1; i<pos-1; i++) {
+                tmp = tmp.getNext();
+            }
+            newptr.setNext(tmp.getNext());
+            tmp.setNext(newptr);
+        }
     }
 
     // Function to delete an element at beginning
@@ -119,7 +135,7 @@ class LinkedList {
     // Function to delete an element at end
     public void deleteAtEnd()
     {
-        Node s = head;
+        /*Node s = head;
         Node t = head;
         while (s != end)
         {
@@ -128,13 +144,20 @@ class LinkedList {
         }
         end = t;
         end.setNext(null);
-        size --;
+        size --;*/
+        Node tmp = head;
+        while (tmp.getNext() != end) {
+            tmp = tmp.next;
+        }
+        end = tmp;
+        tmp.setNext(null);
+        size--;
     }
 
     // Function to delete an element at position
     public void deleteAtPos(int pos)
     {
-        Node ptr = head;
+        /*Node ptr = head;
         pos = pos - 1 ;
         for (int i = 1; i < size - 1; i++)
         {
@@ -147,7 +170,24 @@ class LinkedList {
             }
             ptr = ptr.getNext();
         }
-        size-- ;
+        size-- ;*/
+        if (pos == 1) {
+            deleteAtStart();
+        }
+        else if(pos == size) {
+            deleteAtEnd();
+        }
+        else if(pos > size || pos < 1) {
+            System.out.println("Invalid Position");
+        }
+        else {
+            Node tmp = head;
+            for (int i=1; i<pos-1; i++) {
+                tmp = tmp.next;
+            }
+            tmp.setNext(tmp.next.getNext());
+            size--;
+        }
     }
 
     // Function to display elements
@@ -195,6 +235,8 @@ class LinkedList {
         singlyLinkedList.deleteAtEnd();
         singlyLinkedList.display();
         singlyLinkedList.deleteAtPos(2);
+        singlyLinkedList.display();
+        singlyLinkedList.insertAtPos(3,4);
         singlyLinkedList.display();
     }
 }
