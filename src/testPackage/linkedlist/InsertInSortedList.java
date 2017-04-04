@@ -2,6 +2,7 @@ package testPackage.linkedlist;
 
 /**
  * Created by bajmd on 23/03/17.
+ * Problem Statement: Insert a node in a sorted linkedlist.
  */
 public class InsertInSortedList {
     void insertInSortedList (LinkedList list, Node newNode) {

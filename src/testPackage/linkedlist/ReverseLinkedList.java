@@ -2,6 +2,7 @@ package testPackage.linkedlist;
 
 /**
  * Created by bajmd on 23/03/17.
+ * Problem Statement: Reverse a linkedlist.
  */
 public class ReverseLinkedList {
     public Node reverseList(LinkedList list) {

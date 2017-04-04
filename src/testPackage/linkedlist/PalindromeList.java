@@ -2,6 +2,7 @@ package testPackage.linkedlist;
 
 /**
  * Created by bajmd on 28/03/17.
+ * Problem Statement: Check if the linkedlist is palindrome or not.
  */
 public class PalindromeList {
     void findPalindrome (LinkedList list) {

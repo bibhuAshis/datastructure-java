@@ -2,6 +2,7 @@ package testPackage.linkedlist;
 
 /**
  * Created by bajmd on 23/03/17.
+ * Problem Statement: Find the middle of a linkedlist.
  */
 public class MiddleofLinkedList {
     public Node findMiddle (LinkedList list) {

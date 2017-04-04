@@ -2,6 +2,7 @@ package testPackage.linkedlist;
 
 /**
  * Created by bajmd on 27/03/17.
+ * Problem Statement: Find the given linkedlist length is even or odd.
  */
 public class EvenOrOddList {
     void findEvenorOdd (LinkedList list) {

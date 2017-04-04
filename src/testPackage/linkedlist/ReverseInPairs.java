@@ -2,6 +2,7 @@ package testPackage.linkedlist;
 
 /**
  * Created by bajmd on 27/03/17.
+ * Problem Statement: Reverse a linkedlist in pairs.
  */
 public class ReverseInPairs {
     void reversePairs(LinkedList list) {

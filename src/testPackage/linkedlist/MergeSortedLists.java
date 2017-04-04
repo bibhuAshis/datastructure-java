@@ -2,6 +2,7 @@ package testPackage.linkedlist;
 
 /**
  * Created by bajmd on 27/03/17.
+ * Problem Statement: Given two sorted linkedlists, merge them into a third linkedlist.
  */
 public class MergeSortedLists {
     void mergeLists (LinkedList list1, LinkedList list2) {

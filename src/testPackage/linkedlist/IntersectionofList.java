@@ -2,6 +2,7 @@ package testPackage.linkedlist;
 
 /**
  * Created by bajmd on 23/03/17.
+ * Problem Statement: Given two linkedlists which intersect at a point, find the intersection node.
  */
 public class IntersectionofList {
     void findIntersection (LinkedList list1, LinkedList list2) {

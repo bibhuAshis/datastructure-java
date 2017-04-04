@@ -2,6 +2,7 @@ package testPackage.linkedlist;
 
 /**
  * Created by bajmd on 24/03/17.
+ * Problem Statement: Print a linkedlist from end.
  */
 public class LinkedlistFromEnd {
     void printListfromEnd (Node head) {

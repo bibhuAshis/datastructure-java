@@ -5,6 +5,8 @@ import java.util.Map;
 
 /**
  * Created by bajmd on 29/03/17.
+ * Problem Statement: Given a linkedlist consists of data, next pointer and random pointer which points to a random node,
+ * make a duplicate of the list.
  */
 class RandomNode {
     protected int data;
