@@ -52,14 +52,14 @@ public class BinaryTree {
 
         left_child = new TreeNode(2, null, null);
         right_child = new TreeNode(3, null, null);
-        left_left_child = new TreeNode(4, null, null);
+        //left_left_child = new TreeNode(4, null, null);
         left_right_child = new TreeNode(5, null, null);
         right_left_child = new TreeNode(6, null, null);
         right_right_child  = new TreeNode(7, null, null);
 
         root.left = left_child;
         root.right = right_child;
-        left_child.left = left_left_child;
+        //left_child.left = left_left_child;
         left_child.right = left_right_child;
         right_child.left = right_left_child;
         right_child.right = right_right_child;
@@ -103,8 +103,10 @@ public class BinaryTree {
         while (temp != null) {
             System.out.print(temp.data);
             System.out.print(" ");
-            queue.enqueue(temp.left);
-            queue.enqueue(temp.right);
+            if (temp.left != null)
+                queue.enqueue(temp.left);
+            if (temp.right != null)
+                queue.enqueue(temp.right);
             temp = queue.dequeue();
         }
     }

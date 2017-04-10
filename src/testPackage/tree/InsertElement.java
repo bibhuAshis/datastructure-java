@@ -11,23 +11,38 @@ public class InsertElement {
         }
         else {
             TreeQueue queue = new TreeQueue(10);
-            TreeNode tmp = root;
-            queue.enqueue(tmp);
-            while (tmp != null) {
-                if (tmp.left == null) {
-                    tmp.left = node;
+            TreeNode temp = root;
+            queue.enqueue(temp);
+            while (temp != null) {
+                if (temp.left == null) {
+                    temp.left = node;
                     break;
                 }
-                else if (tmp.right == null) {
-                    tmp.right = node;
+                else if (temp.right == null) {
+                    temp.right = node;
                     break;
                 }
-                queue.enqueue(tmp.left);
-                queue.enqueue(tmp.right);
-                tmp = queue.dequeue();
+                if (temp.left != null)
+                    queue.enqueue(temp.left);
+                if (temp.right != null)
+                    queue.enqueue(temp.right);
+                temp = queue.dequeue();
             }
             return root;
         }
+    }
+
+    public TreeNode insertAlt(TreeNode root, TreeNode node) {
+        if (root == null) {
+            root = node;
+        }
+        else {
+            if (root.left == null)
+                root.left = node;
+            else
+                insertAlt(root.right, node);
+        }
+        return root;
     }
 
     public static void main (String args []) {
@@ -36,6 +51,8 @@ public class InsertElement {
         tree.createTree(root);
 
         InsertElement element = new InsertElement();
+        TreeNode newRootAlt = element.insertAlt(root, new TreeNode(10));
+        tree.levelOrder(newRootAlt);
         TreeNode newRoot = element.insert(root, new TreeNode(10));
         tree.levelOrder(newRoot);
     }

@@ -23,8 +23,10 @@ public class SearchElement {
         while (temp != null) {
             if (temp.data == value)
                 found = true;
-            queue.enqueue(temp.left);
-            queue.enqueue(temp.right);
+            if (temp.left != null)
+                queue.enqueue(temp.left);
+            if (temp.right != null)
+                queue.enqueue(temp.right);
             temp = queue.dequeue();
         }
         return found;

@@ -27,8 +27,10 @@ public class MaxElement {
         while (temp != null) {
             if (temp.data > Max)
                 Max = temp.data;
-            queue.enqueue(temp.left);
-            queue.enqueue(temp.right);
+            if (temp.left != null)
+                queue.enqueue(temp.left);
+            if (temp.right != null)
+                queue.enqueue(temp.right);
             temp = queue.dequeue();
         }
         return Max;
