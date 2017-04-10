@@ -14,6 +14,22 @@ public class SearchElement {
         else
             return false;
     }
+
+    public boolean searchElementAlt (TreeNode root, int value) {
+        TreeNode temp = root;
+        TreeQueue queue = new TreeQueue(10);
+        queue.enqueue(temp);
+        boolean found = false;
+        while (temp != null) {
+            if (temp.data == value)
+                found = true;
+            queue.enqueue(temp.left);
+            queue.enqueue(temp.right);
+            temp = queue.dequeue();
+        }
+        return found;
+    }
+
     public static void main (String args[]) {
         BinaryTree tree = new BinaryTree();
         TreeNode root = new TreeNode(1);
@@ -21,6 +37,8 @@ public class SearchElement {
 
         SearchElement element = new SearchElement();
         boolean exists = element.searchElement(root, 3);
+        boolean exists1 = element.searchElementAlt(root, 3);
         System.out.println(exists);
+        System.out.println(exists1);
     }
 }
