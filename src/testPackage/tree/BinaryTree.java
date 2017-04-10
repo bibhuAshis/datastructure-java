@@ -8,7 +8,13 @@ class TreeNode{
     public TreeNode left;
     public TreeNode right;
 
-    // Constructor
+    // Constructors
+    public TreeNode (int data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+
     public TreeNode (int data, TreeNode left, TreeNode right) {
         this.data = data;
         this.left = left;
@@ -40,6 +46,26 @@ class TreeNode{
     }
 }
 public class BinaryTree {
+    // Create Tree
+    public void createTree (TreeNode root) {
+        TreeNode left_child, right_child, left_left_child, left_right_child, right_left_child, right_right_child;
+
+        left_child = new TreeNode(2, null, null);
+        right_child = new TreeNode(3, null, null);
+        left_left_child = new TreeNode(4, null, null);
+        left_right_child = new TreeNode(5, null, null);
+        right_left_child = new TreeNode(6, null, null);
+        right_right_child  = new TreeNode(7, null, null);
+
+        root.left = left_child;
+        root.right = right_child;
+        left_child.left = left_left_child;
+        left_child.right = left_right_child;
+        right_child.left = right_left_child;
+        right_child.right = right_right_child;
+    }
+
+
     // PreOrder Traversal
     public void preOrder(TreeNode root) {
         if (root != null) {
@@ -84,25 +110,10 @@ public class BinaryTree {
     }
 
     public static void main (String args[]) {
-        // Create a binary tree
-        TreeNode root, left_child, right_child, left_left_child, left_right_child, right_left_child, right_right_child;
-
-        root = new TreeNode(1, null, null);
-        left_child = new TreeNode(2, null, null);
-        right_child = new TreeNode(3, null, null);
-        left_left_child = new TreeNode(4, null, null);
-        left_right_child = new TreeNode(5, null, null);
-        right_left_child = new TreeNode(6, null, null);
-        right_right_child  = new TreeNode(7, null, null);
-
-        root.left = left_child;
-        root.right = right_child;
-        left_child.left = left_left_child;
-        left_child.right = left_right_child;
-        right_child.left = right_left_child;
-        right_child.right = right_right_child;
-
         BinaryTree tree = new BinaryTree();
+        TreeNode root = new TreeNode(1);
+
+        tree.createTree(root);
         tree.preOrder(root);
         System.out.println();
         tree.inOrder(root);
