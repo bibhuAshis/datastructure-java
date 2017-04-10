@@ -119,5 +119,4 @@ public class Queue {
 		queue.print();
 
 	}
-
 }
