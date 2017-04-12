@@ -4,6 +4,7 @@ package testPackage.tree;
  * Created by bajmd on 09/04/17.
  */
 public class SizeOfTree {
+    // Iterative
     public void treeSize (TreeNode root) {
         TreeQueue queue = new TreeQueue(10);
         TreeNode temp = root;
@@ -19,6 +20,7 @@ public class SizeOfTree {
         System.out.println("Size of the tree is " +count);
     }
 
+    // Recursive
     public int treeSizeAlt (TreeNode root) {
         int count = 0;
         if (root != null) {

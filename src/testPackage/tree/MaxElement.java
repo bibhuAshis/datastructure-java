@@ -4,6 +4,7 @@ package testPackage.tree;
  * Created by bajmd on 09/04/17.
  */
 public class MaxElement {
+    // Recursive
     public int findMax(TreeNode root) {
         int Max = 0;
         if (root != null) {
@@ -20,6 +21,7 @@ public class MaxElement {
         return Max;
     }
 
+    // Iterative
     public int findMaxAlt(TreeNode root) {
         TreeQueue queue = new TreeQueue(10);
         TreeNode temp = root;

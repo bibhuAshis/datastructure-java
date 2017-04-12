@@ -4,6 +4,7 @@ package testPackage.tree;
  * Created by bajmd on 09/04/17.
  */
 public class SearchElement {
+    // Recursive
     public boolean searchElement(TreeNode root, int value) {
         if (root != null) {
             if (root.data == value)
@@ -15,14 +16,17 @@ public class SearchElement {
             return false;
     }
 
+    // Iterative
     public boolean searchElementAlt (TreeNode root, int value) {
         TreeNode temp = root;
         TreeQueue queue = new TreeQueue(10);
         queue.enqueue(temp);
         boolean found = false;
         while (temp != null) {
-            if (temp.data == value)
+            if (temp.data == value) {
                 found = true;
+                break;
+            }
             if (temp.left != null)
                 queue.enqueue(temp.left);
             if (temp.right != null)
@@ -39,7 +43,7 @@ public class SearchElement {
 
         SearchElement element = new SearchElement();
         boolean exists = element.searchElement(root, 3);
-        boolean exists1 = element.searchElementAlt(root, 3);
+        boolean exists1 = element.searchElementAlt(root, 15);
         System.out.println(exists);
         System.out.println(exists1);
     }

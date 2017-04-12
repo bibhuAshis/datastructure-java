@@ -4,6 +4,7 @@ package testPackage.tree;
  * Created by bajmd on 09/04/17.
  */
 public class InsertElement {
+    // Iterative
     public TreeNode insert(TreeNode root, TreeNode node) {
         if (root == null) {
             root = node;
@@ -32,6 +33,7 @@ public class InsertElement {
         }
     }
 
+    // Recursive
     public TreeNode insertAlt(TreeNode root, TreeNode node) {
         if (root == null) {
             root = node;
