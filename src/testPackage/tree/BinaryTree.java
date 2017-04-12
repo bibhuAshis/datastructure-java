@@ -114,8 +114,8 @@ public class BinaryTree {
     public static void main (String args[]) {
         BinaryTree tree = new BinaryTree();
         TreeNode root = new TreeNode(1);
-
         tree.createTree(root);
+
         tree.preOrder(root);
         System.out.println();
         tree.inOrder(root);
