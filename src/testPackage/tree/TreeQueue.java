@@ -65,7 +65,22 @@ public class TreeQueue {
         }
     }
 
-    //
+    // Queue Size
+    public int size() {
+        if (rear < front)
+            return ((array.length) - (Math.abs(rear - front) + 1));
+        else
+            return ((rear - front) + 1);
+    }
+
+    // Is Empty
+    public boolean isEmpty() {
+        if (rear == -1 || array[front] == null) {
+            return true;
+        }
+        else
+            return false;
+    }
 
     public static void main(String args []) {
         TreeQueue queue = new TreeQueue(5);
