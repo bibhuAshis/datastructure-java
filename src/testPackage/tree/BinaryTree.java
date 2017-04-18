@@ -99,15 +99,15 @@ public class BinaryTree {
     // LevelOrder Traversal
     public void levelOrder(TreeNode root) {
         TreeQueue queue = new TreeQueue(10);
-        TreeNode temp = root;
-        while (temp != null) {
+        queue.enqueue(root);
+        while (!queue.isEmpty()) {
+            TreeNode temp = queue.dequeue();
             System.out.print(temp.data);
             System.out.print(" ");
             if (temp.left != null)
                 queue.enqueue(temp.left);
             if (temp.right != null)
                 queue.enqueue(temp.right);
-            temp = queue.dequeue();
         }
     }
 

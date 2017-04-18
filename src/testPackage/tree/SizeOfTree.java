@@ -7,14 +7,14 @@ public class SizeOfTree {
     // Iterative
     public void treeSize (TreeNode root) {
         TreeQueue queue = new TreeQueue(10);
-        TreeNode temp = root;
+        queue.enqueue(root);
         int count = 0;
-        while (temp != null) {
+        while (!queue.isEmpty()) {
+            TreeNode temp = queue.dequeue();
             if (temp.left != null)
                 queue.enqueue(temp.left);
             if (temp.right != null)
                 queue.enqueue(temp.right);
-            temp = queue.dequeue();
             count++;
         }
         System.out.println("Size of the tree is " +count);

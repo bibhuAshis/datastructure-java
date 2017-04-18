@@ -12,9 +12,9 @@ public class InsertElement {
         }
         else {
             TreeQueue queue = new TreeQueue(10);
-            TreeNode temp = root;
-            queue.enqueue(temp);
-            while (temp != null) {
+            queue.enqueue(root);
+            while (!queue.isEmpty()) {
+                TreeNode temp = queue.dequeue();
                 if (temp.left == null) {
                     temp.left = node;
                     break;
@@ -27,7 +27,6 @@ public class InsertElement {
                     queue.enqueue(temp.left);
                 if (temp.right != null)
                     queue.enqueue(temp.right);
-                temp = queue.dequeue();
             }
             return root;
         }

@@ -8,16 +8,16 @@ import testPackage.stack.Stack;
 public class DeepestNode {
     void findDeepestNode (TreeNode root) {
         TreeQueue queue = new TreeQueue(10);
+        queue.enqueue(root);
         Stack stack = new Stack(10);
-        TreeNode temp = root;
 
-        while (temp != null) {
+        while (!queue.isEmpty()) {
+            TreeNode temp = queue.dequeue();
             stack.push(temp.getData());
             if (temp.left != null)
                 queue.enqueue(temp.getleft());
             if (temp.right != null)
                 queue.enqueue(temp.getRight());
-            temp = queue.dequeue();
         }
         System.out.println("Deepest node is " +stack.peek());
     }

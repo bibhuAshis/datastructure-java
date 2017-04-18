@@ -6,16 +6,16 @@ package testPackage.tree;
 public class FullNodes {
     void fullNodes (TreeNode root) {
         TreeQueue queue = new TreeQueue(10);
-        TreeNode temp = root;
+        queue.enqueue(root);
         int count = 0;
-        while (temp != null) {
+        while (!queue.isEmpty()) {
+            TreeNode temp = queue.dequeue();
             if (temp.getleft() != null && temp.getRight() != null)
                 count++;
             if (temp.left != null)
                 queue.enqueue(temp.getleft());
             if (temp.right != null)
                 queue.enqueue(temp.getRight());
-            temp = queue.dequeue();
         }
         System.out.println("Number of full nodes is/are " +count);
     }

@@ -18,11 +18,11 @@ public class SearchElement {
 
     // Iterative
     public boolean searchElementAlt (TreeNode root, int value) {
-        TreeNode temp = root;
         TreeQueue queue = new TreeQueue(10);
-        queue.enqueue(temp);
+        queue.enqueue(root);
         boolean found = false;
-        while (temp != null) {
+        while (!queue.isEmpty()) {
+            TreeNode temp = queue.dequeue();
             if (temp.data == value) {
                 found = true;
                 break;
@@ -31,7 +31,6 @@ public class SearchElement {
                 queue.enqueue(temp.left);
             if (temp.right != null)
                 queue.enqueue(temp.right);
-            temp = queue.dequeue();
         }
         return found;
     }
