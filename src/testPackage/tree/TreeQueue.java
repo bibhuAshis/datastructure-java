@@ -67,7 +67,9 @@ public class TreeQueue {
 
     // Queue Size
     public int size() {
-        if (rear < front)
+        if (rear == -1 && front == 0)
+            return 0;
+        else if (rear < front)
             return ((array.length) - (Math.abs(rear - front) + 1));
         else
             return ((rear - front) + 1);
