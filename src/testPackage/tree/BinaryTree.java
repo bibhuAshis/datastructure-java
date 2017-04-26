@@ -61,6 +61,25 @@ public class BinaryTree {
         root.right = right_child;
         left_child.left = left_left_child;
         left_child.right = left_right_child;
+        //right_child.left = right_left_child;
+        //right_child.right = right_right_child;
+    }
+
+    // Create Mirror Tree
+    public void createMirrorTree (TreeNode root) {
+        TreeNode left_child, right_child, left_left_child, left_right_child, right_left_child, right_right_child;
+
+        left_child = new TreeNode(3, null, null);
+        right_child = new TreeNode(2, null, null);
+        left_left_child = new TreeNode(7, null, null);
+        left_right_child = new TreeNode(6, null, null);
+        right_left_child = new TreeNode(5, null, null);
+        right_right_child  = new TreeNode(4, null, null);
+
+        root.left = left_child;
+        root.right = right_child;
+        //left_child.left = left_left_child;
+        //left_child.right = left_right_child;
         right_child.left = right_left_child;
         right_child.right = right_right_child;
     }
