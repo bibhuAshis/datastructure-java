@@ -61,8 +61,8 @@ public class BinaryTree {
         root.right = right_child;
         left_child.left = left_left_child;
         left_child.right = left_right_child;
-        //right_child.left = right_left_child;
-        //right_child.right = right_right_child;
+        right_child.left = right_left_child;
+        right_child.right = right_right_child;
     }
 
     // Create Mirror Tree
