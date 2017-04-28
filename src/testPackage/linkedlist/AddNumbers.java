@@ -38,7 +38,7 @@ public class AddNumbers {
                 num2 = num2.next;
             }
         }
-        else if (carry != 0) {
+        if (carry != 0) {
             list3.insertAtEnd(carry);
         }
         list3.display();
@@ -46,13 +46,13 @@ public class AddNumbers {
     public static void main (String args[]) {
         LinkedList list1 = new LinkedList();
         LinkedList list2 = new LinkedList();
-        list1.insertAtEnd(3);
         list1.insertAtEnd(1);
-        list1.insertAtEnd(5);
+        //list1.insertAtEnd(1);
+        //list1.insertAtEnd(5);
         list1.display();
-        list2.insertAtEnd(5);
         list2.insertAtEnd(9);
-        list2.insertAtEnd(2);
+        list2.insertAtEnd(9);
+        //list2.insertAtEnd(2);
         list2.display();
 
         AddNumbers numbers = new AddNumbers();
