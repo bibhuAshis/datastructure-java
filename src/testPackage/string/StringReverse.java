@@ -5,7 +5,7 @@ package testPackage.string;
  */
 public class StringReverse {
     // Normal Reverse
-    void reverse (String str) {
+    String reverse (String str) {
         StringBuilder str1 = new StringBuilder (str);
         char temp;
         int start, end = str1.length() - 1;
@@ -14,19 +14,21 @@ public class StringReverse {
             str1.setCharAt(start, str1.charAt(end));
             str1.setCharAt(end, temp);
         }
-        System.out.println(str1);
+        //System.out.println(str1);
+        return str1.toString();
     }
 
     // With StringBuffer
-    void reverseAlt (String str) {
+    String reverseAlt (String str) {
         StringBuffer str1 = new StringBuffer(str.length());
         for (int i = str.length()-1; i>=0; i--)
             str1.append(str.charAt(i));
-        System.out.println(str1);
+        //System.out.println(str1);
+        return str1.toString();
     }
 
     // With XOR
-    void reverseXor (String str) {
+    String reverseXor (String str) {
         StringBuilder str1 = new StringBuilder(str);
         int start, end = str1.length()-1;
         for (start=0; start<end; start++,end--) {
@@ -34,15 +36,16 @@ public class StringReverse {
             str1.setCharAt(end, (char) (str1.charAt(end) ^ str1.charAt(start)));
             str1.setCharAt(start, (char) (str1.charAt(start) ^ str1.charAt(end)));
         }
-        System.out.println(str1);
+        //System.out.println(str1);
+        return str1.toString();
     }
 
     public static void main (String args[]) {
         String str = "String";
         System.out.println(str);
         StringReverse reverse = new StringReverse();
-        reverse.reverse(str);
-        reverse.reverseAlt(str);
-        reverse.reverseXor(str);
+        System.out.println(reverse.reverse(str));
+        System.out.println(reverse.reverseAlt(str));
+        System.out.println(reverse.reverseXor(str));
     }
 }
