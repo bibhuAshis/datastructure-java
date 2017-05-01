@@ -7,7 +7,6 @@ class SolveEquation {
 
     // Solution
     public static double[][] solve(int[] pegs) {
-        char[] var = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t'};
         int n = pegs.length - 1;
         double mat[][] = new double[n][n];
         double constant[][] = new double[n][1];
@@ -163,7 +162,7 @@ public class Pegs {
     }
 
     public static void main (String args[]) {
-        int[] pegs = {2};
+        int[] pegs = {4,30,50};
         Pegs result = new Pegs();
         result.answer(pegs);
     }
