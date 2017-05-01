@@ -6,10 +6,10 @@
 
 ### Level 2
 
-1. Elevator maintenance
-2. Gearing up for destruction
+1. elevator_maintenance
+2. gearing_up_for_destruction
 
 ### Level 3
 
-1. Fuel injection perfection
-2. Prepare the bunnies escape
+1. fuel_injection_perfection
+2. prepare_the_bunnies_escape
