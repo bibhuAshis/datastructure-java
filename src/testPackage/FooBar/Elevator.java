@@ -1,7 +1,5 @@
-package testPackage.general;
+package testPackage.FooBar;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Arrays;
 import java.util.List;
 
 /**

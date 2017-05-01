@@ -1,4 +1,4 @@
-package testPackage.general;
+package testPackage.FooBar;
 
 /**
  * Created by bajmd on 28/04/17.

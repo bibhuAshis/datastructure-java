@@ -1,4 +1,4 @@
-package testPackage.general;
+package testPackage.FooBar;
 
 import java.math.BigInteger;
 
