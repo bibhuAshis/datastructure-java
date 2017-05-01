@@ -1,4 +1,4 @@
-package testPackage.FooBar;
+package testPackage.FooBar.gearing_up_for_destruction;
 
 /**
  * Created by bajmd on 29/04/17.

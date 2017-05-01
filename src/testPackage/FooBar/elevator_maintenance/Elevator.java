@@ -1,4 +1,4 @@
-package testPackage.FooBar;
+package testPackage.FooBar.elevator_maintenance;
 import java.util.ArrayList;
 import java.util.List;
 

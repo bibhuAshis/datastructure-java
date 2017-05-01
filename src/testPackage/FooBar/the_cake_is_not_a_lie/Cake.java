@@ -1,4 +1,4 @@
-package testPackage.FooBar;
+package testPackage.FooBar.the_cake_is_not_a_lie;
 
 /**
  * Created by bajmd on 28/04/17.
