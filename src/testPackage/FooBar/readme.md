@@ -1,15 +1,16 @@
-Google Foobar Challenge:
+## Google Foobar Challenge:
 
-Level 1
+### Level 1
 
-The cake is not a lie
+1. The cake is not a lie
 
-Level 2
+### Level 2
 
-Elevator maintenance
-Gearing up for destruction
+1. Elevator maintenance
+2. Gearing up for destruction
 
-Level 3
+### Level 3
 
-Fuel injection perfection
-Prepare the bunnies escape
+1. Fuel injection perfection
+2. Prepare the bunnies escape
+
