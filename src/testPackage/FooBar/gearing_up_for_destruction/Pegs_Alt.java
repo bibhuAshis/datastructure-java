@@ -1,4 +1,4 @@
-package testPackage.general;
+package testPackage.FooBar.gearing_up_for_destruction;
 
 /**
  * Created by bajmd on 29/04/17.
@@ -32,11 +32,11 @@ public class Pegs_Alt {
         double ratio = ((double)first_peg) / ((double)coef_denom);
 
         for(int i = 0; i < pegs.length - 2; i++) {
-            int width = pegs[i+1] - pegs[i];
-            if(ratio < 0 || ratio > (width-1)) {
+            int radius = pegs[i+1] - pegs[i];
+            if(ratio < 0 || ratio > (radius-1)) {
                 return invalid_answer;
             }
-            ratio = width - ratio;
+            ratio = radius - ratio;
         }
         valid_answer[0] = first_peg;
         valid_answer[1] = coef_denom;
