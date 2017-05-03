@@ -9,6 +9,7 @@ public class QuickSort {
 
     int partition(int arr[], int low, int high)
     {
+        // Select random pivot
         Random rand = new Random();
         int randomIndex = low + rand.nextInt(high - low + 1);
         swap(arr, randomIndex, high);
@@ -33,12 +34,14 @@ public class QuickSort {
         return i+1;
     }
 
+    // swap method
     public static void swap(int[] arr, int pos1, int pos2)
     {
         int temp = arr[pos1];
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
     }
+
 
     void quickSort(int arr[], int low, int high)
     {
