@@ -162,7 +162,7 @@ public class Pegs {
     }
 
     public static void main (String args[]) {
-        int[] pegs = {4,30,50};
+        int[] pegs = {4,14};
         Pegs result = new Pegs();
         result.answer(pegs);
     }
