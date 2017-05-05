@@ -6,7 +6,7 @@ package testPackage.searching;
 public class BitonicSearch {
     public static void main (String args[]) {
         BitonicSearch search = new BitonicSearch();
-        int[] inputArray = {2,3,5,4,1};
+        int[] inputArray = {2, 3, 5, 4, 1};
         int element = 1;
         int pivot = search.findPivot(inputArray, 0, inputArray.length-1);
         boolean result = search.searchElement(inputArray, pivot, 0, inputArray.length-1, element);
@@ -29,7 +29,9 @@ public class BitonicSearch {
     }
 
     public boolean searchElement(int[] arr, int p, int l, int h, int element)  {
-        if (arr[p] == element)
+        if (p<0 || p>arr.length-1)
+            return false;
+        else if (arr[p] == element)
             return true;
         else
             return (binSearch1(l, p-1, arr, element) || binSearch2(p+1, h, arr, element));

@@ -1,4 +1,4 @@
-package sorting;
+package testPackage.sorting;
 
 /**
  * Created by bajmd on 03/05/17.
