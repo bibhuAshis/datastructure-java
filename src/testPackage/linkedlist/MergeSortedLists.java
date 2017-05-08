@@ -35,10 +35,10 @@ public class MergeSortedLists {
         LinkedList list2 = new LinkedList();
 
         list1.insertAtStart(1);
-        list1.insertAtEnd(3);
-        list1.insertAtEnd(5);
-        list2.insertAtStart(2);
-        list2.insertAtEnd(4);
+        list1.insertAtEnd(2);
+        list1.insertAtEnd(4);
+        list2.insertAtStart(3);
+        list2.insertAtEnd(5);
         list2.insertAtEnd(6);
 
         list1.display();
