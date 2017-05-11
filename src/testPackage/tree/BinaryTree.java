@@ -7,12 +7,14 @@ class TreeNode{
     public int data;
     public TreeNode left;
     public TreeNode right;
+    public TreeNode sibling;
 
     // Constructors
     public TreeNode (int data) {
         this.data = data;
         this.left = null;
         this.right = null;
+        this.sibling = null;
     }
 
     public TreeNode (int data, TreeNode left, TreeNode right) {
@@ -33,6 +35,10 @@ class TreeNode{
         this.right = right;
     }
 
+    public void setSibling(TreeNode sibling) {
+        this.sibling = sibling;
+    }
+
     public int getData() {
         return this.data;
     }
@@ -43,6 +49,10 @@ class TreeNode{
 
     public TreeNode getRight() {
         return this.right;
+    }
+
+    public TreeNode getSibling() {
+        return this.sibling;
     }
 }
 public class BinaryTree {

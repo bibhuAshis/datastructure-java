@@ -16,6 +16,12 @@ class Node {
         this.next = n;
     }
 
+    public Node()
+    {
+        this.data = 0;
+        this.next = null;
+    }
+
     // Function to set next to next Node
     public void setNext(Node n)
     {

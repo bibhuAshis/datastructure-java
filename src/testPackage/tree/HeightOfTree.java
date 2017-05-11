@@ -5,7 +5,7 @@ package testPackage.tree;
  */
 public class HeightOfTree {
     int findHeight (TreeNode root) {
-        int heightLeft = 0, heightRight = 0, height =0;
+        int heightLeft = 0, heightRight = 0, height = 0;
         if (root != null) {
             heightLeft = findHeight(root.getleft());
             heightRight = findHeight(root.getRight());

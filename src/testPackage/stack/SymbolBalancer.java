@@ -1,5 +1,7 @@
 package testPackage.stack;
 
+import java.util.*;
+
 /**
  * Created by bajmd on 24/12/16.
  * Problem Statement: Discuss how stacks can be used for checking balancing of symbols?

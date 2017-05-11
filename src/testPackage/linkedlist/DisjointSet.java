@@ -1,5 +1,7 @@
 package testPackage.linkedlist;
 
+import java.util.ArrayList;
+
 /**
  * Created by bajmd on 08/05/17.
  */
@@ -15,35 +17,57 @@ public class DisjointSet {
         list.insertAtEnd(7);
 
         list.display();
-        list = obj.joinSets(list.head);
-        list.display();
+        Node newHead = obj.joinSets(list.head);
+        while (newHead != null) {
+            System.out.println(newHead.getData());
+            newHead = newHead.getNext();
+        }
     }
 
-    LinkedList joinSets(Node head) {
-        LinkedList newList = new LinkedList();
-        Node l1 = head;
-        while (l1.getNext() != null && l1.getData() < l1.next.getData()) {
+    Node joinSets(Node head) {
+        //LinkedList newList = new LinkedList();
+        Node l1 = head, l2 = head;
+        Node l4 = new Node();
+        while (l2.getNext() != null && l2.getData() < l2.next.getData()) {
+            l2 = l2.getNext();
+        }
+        l2 = l2.getNext();
+        Node l3 = l2;
+
+        if (l2 == null || l1.getData() <= l2.getData()){
+            head = l1;
+            l4 = head;
             l1 = l1.getNext();
         }
-        Node l2 = l1.getNext();
-        while (head != null && l2 != null ) {
-            if (head == l1.getNext()) {
-                newList.insertAtEnd(l2.data);
+        else {
+            head = l2;
+            l4 = head;
+            l2 = l2.getNext();
+        }
+
+        while (l1 != null && l2 != null ) {
+            if (l1 == l3) {
+                head.setNext(l2);
+                head = head.getNext();
                 l2 = l2.getNext();
             }
             else if (l2 == null) {
-                newList.insertAtEnd(head.data);
+                head.setNext(l1);
                 head = head.getNext();
+                l1 = l1.getNext();
             }
-            else if (head.getData() <= l2.getData()) {
-                newList.insertAtEnd(head.data);
+            else if (l1.getData() <= l2.getData()) {
+                head.setNext(l1);
                 head = head.getNext();
+                l1 = l1.getNext();
             }
             else {
-                newList.insertAtEnd(l2.getData());
+                head.setNext(l2);
+                head = head.getNext();
                 l2 = l2.getNext();
             }
         }
-        return newList;
+        head.setNext(null);
+        return l4;
     }
 }
