@@ -21,16 +21,10 @@ public class DiameterOfTree {
     }
 
     int findHeight (TreeNode root) {
-        int heightLeft, heightRight, height = 0;
-        if (root != null) {
-            heightLeft = findHeight(root.getleft());
-            heightRight = findHeight(root.getRight());
-            if (heightLeft >= heightRight)
-                return heightLeft + 1;
-            else
-                return heightRight + 1;
-        }
-        return height;
+        if (root == null)
+            return 0;
+        else
+            return (1 + Math.max(findHeight(root.getleft()), findHeight(root.getRight())));
     }
 
     public static void main (String args[]) {

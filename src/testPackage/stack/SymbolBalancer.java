@@ -32,7 +32,7 @@ class Balancer {
 			}
 		}
 		if (symbols.isEmpty() && isBalanced)
-			System.out.println("String is Balanced");
+			System.out.println("String is VerifyBST");
 		else
 			System.out.println("String is Unbalanced");
 	}
