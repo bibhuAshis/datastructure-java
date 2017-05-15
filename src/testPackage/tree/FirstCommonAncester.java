@@ -25,8 +25,8 @@ public class FirstCommonAncester {
         TreeNode root  = new TreeNode(1);
         BinaryTree tree = new BinaryTree();
         tree.createTree(root);
-        int node1 = 3;
-        int node2 = 7;
+        int node1 = 2;
+        int node2 = 3;
 
         FirstCommonAncester ancester = new FirstCommonAncester();
         int result = ancester.commonAncester(root, node1, node2);

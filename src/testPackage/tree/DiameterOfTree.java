@@ -3,35 +3,42 @@ package testPackage.tree;
 /**
  * Created by bajmd on 16/04/17.
  */
-class Height {
-    int h;
-}
+
 public class DiameterOfTree {
-    int findDiameter (TreeNode root, Height height) {
-        int left_Diameter, right_Diameter;
-        Height left_Height = new Height();
-        Height right_Height = new Height();
+    int findDiameter (TreeNode root) {
+        int left_Diameter, right_Diameter, left_Height, right_Height;
 
         if (root == null) {
-            height.h = 0;
             return 0;
         }
-
-        left_Diameter = findDiameter(root.getleft(), left_Height);
-        right_Diameter = findDiameter(root.getRight(), right_Height);
-
-        height.h = Math.max(left_Height.h, right_Height.h) + 1;
-        return Math.max(left_Height.h + right_Height.h + 1, Math.max(left_Diameter, right_Diameter));
+        else {
+            left_Height = findHeight(root.getleft());
+            right_Height = findHeight(root.getRight());
+            left_Diameter = findDiameter(root.getleft());
+            right_Diameter = findDiameter(root.getRight());
+            return Math.max(left_Height + right_Height + 1, Math.max(left_Diameter, right_Diameter));
+        }
     }
+
+    int findHeight (TreeNode root) {
+        int heightLeft, heightRight, height = 0;
+        if (root != null) {
+            heightLeft = findHeight(root.getleft());
+            heightRight = findHeight(root.getRight());
+            if (heightLeft >= heightRight)
+                return heightLeft + 1;
+            else
+                return heightRight + 1;
+        }
+        return height;
+    }
+
     public static void main (String args[]) {
         TreeNode root = new TreeNode(1);
         BinaryTree tree = new BinaryTree();
         tree.createTree(root);
-        int diameter;
-        Height height = new Height();
 
         DiameterOfTree obj = new DiameterOfTree();
-        diameter = obj.findDiameter(root, height);
-        System.out.println("Diameter of tree is: " +diameter);
+        System.out.println("Diameter of tree is: " +obj.findDiameter(root));
     }
 }

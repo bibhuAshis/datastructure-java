@@ -11,7 +11,7 @@ public class Combinations {
     }
 
     public static void main (String args[]) {
-        String input_string = "ABC";
+        String input_string = "BIBHU";
         Combinations string_combinations = new Combinations();
         string_combinations.findCombination("", input_string);
     }

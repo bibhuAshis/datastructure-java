@@ -4,7 +4,6 @@ package testPackage.stack;
  * Created by bajmd on 20/12/16.
  * Problem Statement: Write array implementation of integer stack ADT.
  */
-
 public class Stack {
 	public int array[];
 	protected int top, size;

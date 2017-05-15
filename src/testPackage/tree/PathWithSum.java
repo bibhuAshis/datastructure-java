@@ -19,7 +19,7 @@ public class PathWithSum {
         TreeNode root = new TreeNode(1);
         BinaryTree tree = new BinaryTree();
         tree.createTree(root);
-        int sum = 10;
+        int sum = 9;
 
         PathWithSum sumPath = new PathWithSum();
         boolean result = sumPath.rootLeafPaths(root, sum);

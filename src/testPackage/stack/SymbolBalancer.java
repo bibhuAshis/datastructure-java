@@ -31,7 +31,7 @@ class Balancer {
 				}
 			}
 		}
-		if (isBalanced)
+		if (symbols.isEmpty() && isBalanced)
 			System.out.println("String is Balanced");
 		else
 			System.out.println("String is Unbalanced");

@@ -14,7 +14,7 @@ public class Permutations {
     }
 
     public static void main (String args[]) {
-        String inputstring = "AAA";
+        String inputstring = "BIBHU";
         Permutations string_permutation  = new Permutations();
         string_permutation.findPermutation("",inputstring);
     }

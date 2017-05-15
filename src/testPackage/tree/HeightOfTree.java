@@ -5,14 +5,14 @@ package testPackage.tree;
  */
 public class HeightOfTree {
     int findHeight (TreeNode root) {
-        int heightLeft = 0, heightRight = 0, height = 0;
+        int heightLeft, heightRight, height = 0;
         if (root != null) {
             heightLeft = findHeight(root.getleft());
             heightRight = findHeight(root.getRight());
             if (heightLeft >= heightRight)
-                height = heightLeft + 1;
+                return heightLeft + 1;
             else
-                height = heightRight + 1;
+                return heightRight + 1;
         }
         return height;
     }
