@@ -17,7 +17,11 @@ class Balancer {
 				symbols.push(symbolArray.charAt(i));
 			}
 			else {
-				if (symbolArray.charAt(i) == ']' && symbols.pop() != '['){
+				if (symbolArray.isEmpty()){
+					isBalanced = false;
+					break;
+				}
+				else if (symbolArray.charAt(i) == ']' && symbols.pop() != '['){
 					isBalanced = false;
 					break;
 				}
@@ -31,8 +35,8 @@ class Balancer {
 				}
 			}
 		}
-		if (symbols.isEmpty() && isBalanced)
-			System.out.println("String is VerifyBST");
+		if (isBalanced && symbols.isEmpty())
+			System.out.println("String is Balanced");
 		else
 			System.out.println("String is Unbalanced");
 	}
@@ -41,7 +45,7 @@ class Balancer {
 public class SymbolBalancer {
 	public static void main (String args[]) {
 		Balancer balance = new Balancer();
-		String symbolArray = "((A+B)+{}[C-D])";
+		String symbolArray = ")(A+B)+{}[C-D])";
 		balance.checkBalance(symbolArray);
 	}
 }

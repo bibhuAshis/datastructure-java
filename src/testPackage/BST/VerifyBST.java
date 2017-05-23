@@ -25,8 +25,7 @@ public class VerifyBST {
         while (!queue.isEmpty()) {
             a = queue.poll();
             if (!queue.isEmpty()) {
-                b = queue.poll();
-                if (a > b)
+                if (a >= queue.peek())
                     return false;
             }
         }
