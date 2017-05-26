@@ -1,5 +1,7 @@
 package testPackage.CTCI;
 
+import java.util.Objects;
+
 import static org.junit.Assert.assertArrayEquals;
 
 //import static
@@ -41,52 +43,46 @@ public class ArrayRotation {
      * </pre>
      */
 
+    public static Object[] rightRotation(Object[] data, int n, Object[] output, int size) {
+        for (int i=0; i < n; i++)
+            output[i] = data[size-n+i];
+        for (int i=n, j=0; i< size; i++, j++)
+            output[i] = data[j];
+        return output;
+    }
+
+    public static Object[] leftRotation(Object[] data, int n, Object[] output, int size) {
+        for (int i=0; i < size-n; i++)
+            output[i] = data[n+i];
+        for (int i=size-n, j=0; i< size; i++, j++)
+            output[i] = data[j];
+        return output;
+    }
+
     public static Object[] rotate(Object[] data, int n) {
         int size = data.length;
-        if (n == 0 || Math.abs(n) == data.length ) {
+        if (n == 0 || Math.abs(n) == size ) {
             return data;
         }
         else{
             Object[] output = new Object[size];
-            if (n > 0 && n < size) {
-                for (int i=0; i < n; i++)
-                    output[i] = data[size-n+i];
-                for (int i=n, j=0; i< size; i++, j++)
-                    output[i] = data[j];
+
+            if (n > 0 && n < size)
+                rightRotation(data, n, output, size);
+
+            else if (n < 0 && Math.abs(n) < size)
+                leftRotation(data, Math.abs(n), output, size);
+
+            else if (n > 0 && n > size) {
+                int k = n/size;
+                n -= (k*size);
+                rightRotation(data, n, output, size);
             }
 
-            if (n < 0 && Math.abs(n) < size) {
-                int m =Math.abs(n);
-                for (int i=0; i < size-m; i++)
-                    output[i] = data[m+i];
-                for (int i=size-m, j=0; i< size; i++, j++)
-                    output[i] = data[j];
-            }
-
-            if (n > 0 && n > size) {
-                int k = size;
-                while (k < n)
-                    k += size;
-                k -= size;
-                int m = n - k;
-                for (int i=0; i < m; i++)
-                    output[i] = data[size-m+i];
-                for (int i=m, j=0; i< size; i++, j++)
-                    output[i] = data[j];
-
-            }
-
-            if (n < 0 && Math.abs(n) > size) {
-                int k = size;
-                while (k < Math.abs(n))
-                    k += size;
-                k -= size;
-                int m = Math.abs(n) - k;
-                for (int i=0; i < size-m; i++)
-                    output[i] = data[m+i];
-                for (int i=size-m, j=0; i< size; i++, j++)
-                    output[i] = data[j];
-
+            else if (n < 0 && Math.abs(n) > size) {
+                int k = Math.abs(n) / size;
+                n = Math.abs(n) - (k * size);
+                leftRotation(data, n, output, size);
             }
 
             return output;
@@ -94,7 +90,7 @@ public class ArrayRotation {
     }
 
     public static void main(String args[]) {
-        ArrayRotation obj = new ArrayRotation();
+        //ArrayRotation obj = new ArrayRotation();
         //obj.rotate(new Object[] {1,2,3,4,5} ,11);
 
         // rotate 1 to the right

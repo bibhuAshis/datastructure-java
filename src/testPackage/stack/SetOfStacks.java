@@ -13,7 +13,7 @@ class IStack {
 	 int isTop, size;
 
 	public IStack() {
-		isTop = -1;
+		//isTop = -1;
 	}
 
 	public IStack(int m) {
@@ -25,7 +25,7 @@ class IStack {
 
 public class SetOfStacks extends IStack {
 
-	public IStack setofStacks[];
+	IStack setofStacks[];
 	int sosTop, sosSize, isSize;
 
 	// Constructor

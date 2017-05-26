@@ -9,20 +9,30 @@ import testPackage.stack.Stack;
  */
 class ConsecutiveChecker {
     Queue queue = new Queue(5);
+    Stack stack1 = new Stack(5);
     boolean consecutive = true;
     public void checkConsecutiveness(Stack stack) {
         while (!stack.isEmpty()) {
-            queue.enqueue(stack.pop());
+            //queue.enqueue(stack.pop());
+            stack1.push(stack.pop());
         }
-        queue.print();
-        while (queue.getFront() <= queue.getRear()) {
+        /*while (queue.getFront() <= queue.getRear()) {
             stack.push(queue.dequeue());
         }
-        stack.print();
         while (!stack.isEmpty()) {
             int m = stack.pop();
             if (!stack.isEmpty()) {
                 int n = stack.pop();
+                if (Math.abs(m-n) != 1) {
+                    consecutive = false;
+                    break;
+                }
+            }
+        }*/
+        while (!stack1.isEmpty()) {
+            int m = stack1.pop();
+            if (!stack1.isEmpty()) {
+                int n = stack1.pop();
                 if (Math.abs(m-n) != 1) {
                     consecutive = false;
                     break;
@@ -43,7 +53,8 @@ public class ConsecutiveIntegers {
         stack.push(4);
         stack.push(5);
         stack.push(-2);
-        stack.push(-4);
+        stack.push(-3);
+        stack.push(-5);
         stack.print();
         ConsecutiveChecker checker = new ConsecutiveChecker();
         checker.checkConsecutiveness(stack);

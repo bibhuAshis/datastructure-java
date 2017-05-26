@@ -27,7 +27,7 @@ public class DisjointSet {
     Node joinSets(Node head) {
         //LinkedList newList = new LinkedList();
         Node l1 = head, l2 = head;
-        Node l4 = new Node();
+        Node l4;
         while (l2.getNext() != null && l2.getData() < l2.next.getData()) {
             l2 = l2.getNext();
         }

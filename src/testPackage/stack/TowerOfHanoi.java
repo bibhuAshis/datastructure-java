@@ -9,7 +9,7 @@ class TowerOfHanoiSolver{
 
     private void iterativeSolEven (Stack A, Stack B, Stack C, double diskno) {
 
-        double loop = count(diskno);
+        double loop = countLoops(diskno);
         for(int i = 0; i < loop;) {
 
             if(i++ < loop) {
@@ -34,11 +34,10 @@ class TowerOfHanoiSolver{
 
     private void iterativeSolOdd (Stack A, Stack B, Stack C, double diskno) {
 
-        double loop = count(diskno);
+        double loop = countLoops(diskno);
         for(int i = 0; i < loop;) {
 
             if(i++ < loop) {
-
                 swapDisks(A, C);
             } else {
                 break;
@@ -58,7 +57,7 @@ class TowerOfHanoiSolver{
         }
     }
 
-    private double count (double diskno) {
+    private double countLoops(double diskno) {
         return Math.pow(2, diskno) - 1;
     }
 
@@ -96,5 +95,6 @@ public class TowerOfHanoi {
         solver.solveTowerOfHanoi(A, B, C, diskno);
         A.print();
         C.print();
+        System.out.println(C.getTop());
     }
 }
