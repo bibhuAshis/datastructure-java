@@ -12,21 +12,34 @@ class Rearrange {
         for (int i=0; i<m / 2; i++) {
             tempQueue.enqueue(queue.dequeue());
         }
-        while (queue.getFront() < m && tempQueue.getFront() < m/2) {
+        int count1 = tempQueue.getRear()+1;
+        int count2 = m - count1;
+        int i=0, j=0;
+        while (i < count1 && j < count2) {
             queue.enqueue(tempQueue.dequeue());
             queue.enqueue(queue.dequeue());
+            i++; j++;
+        }
+        while (j<count2) {
+            queue.enqueue(queue.dequeue());
+            j++;
         }
         queue.print();
     }
 }
 public class QueueRearrange {
     public static void main (String args[]) {
-        Queue queue = new Queue(5);
-        queue.enqueue(1);
-        queue.enqueue(2);
-        queue.enqueue(3);
-        queue.enqueue(4);
-        queue.enqueue(5);
+        Queue queue = new Queue(10);
+        queue.enqueue(11);
+        queue.enqueue(12);
+        queue.enqueue(13);
+        queue.enqueue(14);
+        queue.enqueue(15);
+        queue.enqueue(16);
+        queue.enqueue(17);
+        queue.enqueue(18);
+        queue.enqueue(19);
+        queue.enqueue(20);
         Rearrange rearranger = new Rearrange();
         rearranger.rearrangeQueue(queue);
     }

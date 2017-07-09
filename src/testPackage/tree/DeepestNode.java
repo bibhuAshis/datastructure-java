@@ -9,17 +9,17 @@ public class DeepestNode {
     void findDeepestNode (TreeNode root) {
         TreeQueue queue = new TreeQueue(10);
         queue.enqueue(root);
-        Stack stack = new Stack(10);
+        int deep = 0;
 
         while (!queue.isEmpty()) {
             TreeNode temp = queue.dequeue();
-            stack.push(temp.getData());
+            deep = temp.getData();
             if (temp.left != null)
                 queue.enqueue(temp.getleft());
             if (temp.right != null)
                 queue.enqueue(temp.getRight());
         }
-        System.out.println("Deepest node is " +stack.peek());
+        System.out.println("Deepest node is " +deep);
     }
 
     public static void main (String args[]) {

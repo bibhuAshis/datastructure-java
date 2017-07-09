@@ -5,15 +5,15 @@ package testPackage.tree;
  */
 public class CreateMirror {
     TreeNode createMirror (TreeNode root) {
-        TreeNode newRoot;
+        TreeNode temp;
         if (root == null)
             return null;
         else {
             createMirror(root.getleft());
             createMirror(root.getRight());
-            newRoot = root.getleft();
+            temp = root.getleft();
             root.left = root.getRight();
-            root.right = newRoot;
+            root.right = temp;
         }
         return root;
     }

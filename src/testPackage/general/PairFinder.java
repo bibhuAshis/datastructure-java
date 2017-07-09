@@ -12,7 +12,7 @@ public class PairFinder {
 		pairFinder.findPair();
 	}
 	void findPair() {
-		int array[] = {1,2,3,4,5};
+		int array[] = {4,2,3,1,5};
 		int sum =5;
 		HashMap<Integer, Integer> myMap = new HashMap<Integer, Integer>();
 		for (int i=0; i<5; i++) {

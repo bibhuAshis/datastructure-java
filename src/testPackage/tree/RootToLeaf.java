@@ -29,7 +29,7 @@ public class RootToLeaf {
         tree.createTree(root);
 
         RootToLeaf printPath = new RootToLeaf();
-        int pathArray[] = new int[100];
+        int pathArray[] = new int[3];
         printPath.rootLeafPaths(root, pathArray, 0);
     }
 }

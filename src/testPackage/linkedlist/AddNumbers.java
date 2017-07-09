@@ -18,25 +18,21 @@ public class AddNumbers {
             num1 = num1.next;
             num2 = num2.next;
         }
-        if (num1 != null) {
-            while (num1 != null)
-            {
-                sum = num1.data + carry;
-                carry = sum / 10;
-                sum = sum % 10;
-                list3.insertAtEnd(sum);
-                num1 = num1.next;
-            }
+        while (num1 != null)
+        {
+            sum = num1.data + carry;
+            carry = sum / 10;
+            sum = sum % 10;
+            list3.insertAtEnd(sum);
+            num1 = num1.next;
         }
-        else if (num2 != null) {
-            while (num2 != null)
-            {
-                sum = num2.data + carry;
-                carry = sum / 10;
-                sum = sum % 10;
-                list3.insertAtEnd(sum);
-                num2 = num2.next;
-            }
+        while (num2 != null)
+        {
+            sum = num2.data + carry;
+            carry = sum / 10;
+            sum = sum % 10;
+            list3.insertAtEnd(sum);
+            num2 = num2.next;
         }
         if (carry != 0) {
             list3.insertAtEnd(carry);

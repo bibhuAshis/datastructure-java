@@ -9,16 +9,6 @@ public class BalancedTreeCheck {
         int MaxDepth = findMaxDepth (root);
         int MinDepth = findMinDepth (root);
         return (MaxDepth - MinDepth);
-        /*if (root == null)
-            return true;
-        else {
-            int leftHeight = findHeight(root.getleft());
-            int rightHeight = findHeight(root.getRight());
-            if (Math.abs(leftHeight - rightHeight) > 1)
-                return false;
-            else
-                return (true && checkBalance(root.getleft()) && checkBalance(root.getRight()));
-        }*/
     }
 
     int findMaxDepth (TreeNode root) {
@@ -33,13 +23,6 @@ public class BalancedTreeCheck {
             return 0;
         else
             return (1 + Math.min(findMinDepth(root.getleft()), findMinDepth(root.getRight())));
-    }
-
-    int findHeight(TreeNode root) {
-        if (root == null)
-            return 0;
-        else
-            return (1 + Math.max(findHeight(root.getRight()), findHeight(root.getleft())));
     }
 
     public static void main (String args[]) {

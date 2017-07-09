@@ -67,10 +67,10 @@ public class BinaryTree {
         right_left_child = new TreeNode(6, null, null);
         right_right_child  = new TreeNode(7, null, null);
 
-        //root.left = left_child;
+        root.left = left_child;
         root.right = right_child;
-        //left_child.left = left_left_child;
-        //left_child.right = left_right_child;
+        left_child.left = left_left_child;
+        left_child.right = left_right_child;
         right_child.left = right_left_child;
         right_child.right = right_right_child;
     }
