@@ -4,25 +4,28 @@ package testPackage.tree;
  * Created by bajmd on 26/04/17.
  */
 public class BalancedTreeCheck {
-    //boolean
-    int checkBalance (TreeNode root) {
-        int MaxDepth = findMaxDepth (root);
-        int MinDepth = findMinDepth (root);
-        return (MaxDepth - MinDepth);
+    boolean checkBalance (TreeNode root) {
+        if (root == null)
+            return true;
+        if (getBalanceFactor(root) >= 0)
+            return true;
+        else
+            return false;
     }
 
-    int findMaxDepth (TreeNode root) {
+    int getBalanceFactor (TreeNode root) {
         if (root == null)
             return 0;
-        else
-            return (1 + Math.max(findMaxDepth(root.getleft()), findMaxDepth(root.getRight())));
-    }
-
-    int findMinDepth (TreeNode root) {
-        if (root == null)
-            return 0;
-        else
-            return (1 + Math.min(findMinDepth(root.getleft()), findMinDepth(root.getRight())));
+        int getLeftBalanceFactor = getBalanceFactor (root.getleft());
+        if (getLeftBalanceFactor == -1)
+            return -1;
+        int getRightBalanceFactor = getBalanceFactor (root.getRight());
+        if (getRightBalanceFactor == -1)
+            return -1;
+        int diff = getLeftBalanceFactor - getRightBalanceFactor;
+        if (Math.abs(diff) > 1)
+            return -1;
+        return (1 + Math.max(getLeftBalanceFactor, getRightBalanceFactor));
     }
 
     public static void main (String args[]) {
@@ -31,9 +34,7 @@ public class BalancedTreeCheck {
         tree.createTree(root);
 
         BalancedTreeCheck balanced = new BalancedTreeCheck();
-        //System.out.println(balanced.checkBalance(root));
-        int result = balanced.checkBalance(root);
-        if (result <= 1)
+        if (balanced.checkBalance(root))
             System.out.println("Tree is balanced");
         else
             System.out.println("Tree is not balanced");
